@@ -2,13 +2,47 @@ const router = require('express').Router()
 const { Post, User, Playlist, Song } = require('../models')
 const passport = require('passport')
 const { song } = require('.')
-
+const { test } = require('media-typer')
+// get request for the songs in a playlist
 router.get('/playlists/:pid/songs', passport.authenticate('jwt'), (req, res) => {
-  Song.findAll()
+  Song.findAll({ where: { pid: req.params.pid }})
     .then(songs => res.json(songs))
     .catch(err => console.log(err))
 })
+// get request for all songs belonging to a user
+const allsongs = []
+const playlist_ids = []
+router.get('/allsongs', passport.authenticate('jwt'), (req, res) => {
+  Playlist.findAll( { include: ['u'] } ) 
+  .then(playlists => {
+    playlists.forEach(playlist => {
+      playlist_ids.push(playlist.dataValues.id)})
+      Song.findAll({ where: { pid: playlist_ids } })
+        .then(songs => {
+          songs.forEach(song => allsongs.key.push(song.dataValues))
+          res.json(allsongs)
+        })
+  }).catch(err => console.log(err))
+  })
+    
 
+  // .then(() => res.json(allsongs))
+  //   Song.findAll({ where: { pid: playlist.id } })
+  //   .then(songs => forEach((song) => {
+  //     allsongs.push(song)
+  //   }))
+  //   .catch(err => console.log(err))
+  // }))
+  // .then(() => res.json(allsongs))
+  // .catch(err => console.log(err))
+
+// get request for specific mood
+router.get('/playlists/:pid/songs/mood/:mid', passport.authenticate('jwt'), (req, res) => {
+  Song.findAll({ where: [ { pid: req.params.pid }, { mood: req.params.mid } ] })
+    .then(songs => res.json(songs))
+    .catch(err => console.log(err))
+})
+// post request to add new song
 router.post('/playlists/:pid/songs', passport.authenticate('jwt'), (req, res) => Song.create({
   title: req.body.title,
   artist: req.body.artist,
