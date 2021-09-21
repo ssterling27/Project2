@@ -10,8 +10,8 @@ router.get('/playlists/:pid/songs', passport.authenticate('jwt'), (req, res) => 
     .catch(err => console.log(err))
 })
 // get request for all songs belonging to a user
-const allsongs = []
-const playlist_ids = []
+let allsongs = []
+let playlist_ids = []
 router.get('/allsongs', passport.authenticate('jwt'), (req, res) => {
   Playlist.findAll( { include: ['u'] } ) 
   .then(playlists => {
@@ -26,15 +26,19 @@ router.get('/allsongs', passport.authenticate('jwt'), (req, res) => {
   })
     
 
-  // .then(() => res.json(allsongs))
-  //   Song.findAll({ where: { pid: playlist.id } })
-  //   .then(songs => forEach((song) => {
-  //     allsongs.push(song)
-  //   }))
-  //   .catch(err => console.log(err))
-  // }))
-  // .then(() => res.json(allsongs))
-  // .catch(err => console.log(err))
+router.get('/allsongs/mood/:mid', passport.authenticate('jwt'), (req, res) => {
+  Playlist.findAll({ include: ['u'] })
+    .then(playlists => {
+      playlists.forEach(playlist => {
+        playlist_ids.push(playlist.dataValues.id)
+      })
+      Song.findAll({ where: [{ pid: playlist_ids }, { mid: req.params.mid }] })
+        .then(songs => {
+          songs.forEach(song => allsongs.key.push(song.dataValues))
+          res.json(allsongs)
+        })
+    }).catch(err => console.log(err))
+})
 
 // get request for specific mood
 router.get('/playlists/:pid/songs/mood/:mid', passport.authenticate('jwt'), (req, res) => {

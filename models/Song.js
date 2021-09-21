@@ -7,6 +7,7 @@ Song.init({
   title: DataTypes.STRING,
   artist: DataTypes.STRING,
   album: DataTypes.STRING,
+  artwork: DataTypes.STRING,
   mood: DataTypes.STRING,
   link : DataTypes.STRING,
   pid: DataTypes.INTEGER
