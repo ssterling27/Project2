@@ -19,9 +19,11 @@ axios.get(`api/playlists/${pid}`, {
   }
 })
   .then(( { data: playlist }) => {
+    console.log(playlist)
     const playlistElem = document.createElement('tr')
     playlistElem.innerHTML = `
     <td><h5>${playlist.name}</h5></td>
+    <td><div class="badge bg-primary rounded-pill playlistLink">${playlist.u}</div></td>
     <td><div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Sort by Mood</button>
     <ul class="dropdown-menu" id="moodsHere" aria-labelledby="drowndownMenuButton1">
@@ -75,7 +77,13 @@ document.addEventListener('click', event => {
   if (event.target.classList.contains('moodSelector')) {
     event.preventDefault()
     removeAllChildNodes(document.getElementById('songsHere'))
-    axios.get(`/api/playlists/${pid}/songs/mood/${event.target.textContent}`, {
+    moodSelect = event.target.textContent
+    if (moodSelect !== 'All') {
+      getRequest = `/api/playlists/${pid}/songs/mood/${moodSelect}`
+    } else {
+      getRequest = `../api/playlists/${pid}/songs`
+    }
+    axios.get(getRequest, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
