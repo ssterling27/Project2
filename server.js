@@ -37,7 +37,7 @@ app.get('/playlists/:pid', (req, res) => {
 app.get('/create', (req, res) => {
   res.sendFile(join(__dirname, 'public/createPlaylist.html'))
 })
-app.get('/playlists/:pid/add', (req, res )=> {
+app.get('/playlists/add/:pid', (req, res )=> {
   res.sendFile(join(__dirname, 'public/addSongs.html'))
 })
 // requiring database, syncing, then opening server
