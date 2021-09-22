@@ -4,7 +4,7 @@ const passport = require('passport')
 const { song } = require('.')
 const { test } = require('media-typer')
 // get request for the songs in a playlist
-router.get('/playlists/:pid/songs', passport.authenticate('jwt'), (req, res) => {
+router.get('/playlists/:pid/songs', (req, res) => {
   Song.findAll({ where: { pid: req.params.pid }})
     .then(songs => res.json(songs))
     .catch(err => console.log(err))
@@ -53,7 +53,8 @@ router.post('/playlists/:pid/songs', passport.authenticate('jwt'), (req, res) =>
   album: req.body.album,
   mood: req.body.mood,
   link: req.body.link,
-  pid: req.params.pid
+  pid: req.params.pid,
+  artwork: req.body.artwork
 })
   .then(song => Song.findOne({ where: { id: song.id } }))
   .then(song => res.json(song))
@@ -66,7 +67,8 @@ router.put('/playlists/:pid/songs/:sid', passport.authenticate('jwt'), (req, res
   album: req.body.album,
   mood: req.body.mood,
   link: req.body.link,
-  pid: req.params.pid
+  pid: req.params.pid,
+  artwork: req.body.artwork
 }, {where: { id: req.params.sid }} )
   .then(() => res.sendStatus(200))
   .catch(err => console.log(err))
