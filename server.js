@@ -31,6 +31,15 @@ passport.use(new JWTStrategy({
   .catch(err => cb(err, null))))
 
 app.use(require('./routes'))
+app.get('/playlists/:pid', (req, res) => {  
+  res.sendFile(join(__dirname, 'public/viewPlaylist.html'))
+})
+app.get('/create', (req, res) => {
+  res.sendFile(join(__dirname, 'public/createPlaylist.html'))
+})
+app.get('/playlists/:pid/add', (req, res )=> {
+  res.sendFile(join(__dirname, 'public/addSongs.html'))
+})
 // requiring database, syncing, then opening server
 require('./db')
   // reset database values with .sync({ force: true })
