@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moodify</title>
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+    integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/viewPlaylist.css">
+</head>
+
+<body>
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="menu">
+        <li class="menu-text">Moodify</li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="playlist.html">Playlist</a></li>
+        <li><a href="songs.html">Search Songs</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- <div class="button-group align-center expand">
+   
+    <a class="success button">Save</a>
+    <a class="alert button">Delete</a>
+    <button class="dropdown button">Sort by Mood</button>
+    </a>
+  </div> -->
+  <div class="grid-container" style="margin-top: 30px;">
+    <div class="grid-x">
+      <div class="cell">
+        <div class="card">
+          <div class="card-divider">
+            <h1>Search for a Song</h1>
+          </div>
+          <div class="card-section">
+            <form>
+              <label for="songSearch">Song Name</label>
+              <input type="text" id="songSearch">
+              <button type="button" class="success button" id="searchForSong">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h5>OR</h5>
+  <div class="grid-container" style="margin-top: 30px;">
+    <div class="grid-x">
+      <div class="cell">
+        <div class="card">
+          <div class="card-divider">
+            <h1>Input Song Manually</h1>
+          </div>
+          <div class="card-section">
+            <form>
+              <input type="text" id="songTitle" placeholder="Song Title">
+              <button type="button" class="success button" id="createPlaylist">Create</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/assets/js/createPlaylist.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E</script>
+  
+</body>
+</html>
