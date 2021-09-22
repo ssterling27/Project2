@@ -1,0 +1,70 @@
+body {
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+  font-weight: 200;
+  font-size: 20px;
+  font-style: bold;
+}
+
+/* .parallax-background {
+  background-image: url(./YT_Music.jpg);
+  height: auto;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+} */
+
+#parallax-1 {
+  background-image: url(./YT_Music.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 10px solid orange;
+  background-color: darkslategray;
+}
+
+#parallax-1 hr {
+  background: #485;
+}
+
+#parallax-2 {
+  background-color: blue;
+}
+
+#parallax-2 hr {
+  background: #red;
+}
+
+#parallax-3 {
+  background-image: url(./YT_Music.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 10px solid orange;
+  background-color: pink;
+}
+
+#parallax-3 hr {
+  background: #485fc7;
+}
+
+.intro-text {
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+  margin-top: 15%;
+}
+
+.parallax-content {
+  max-width: 100%;
+  position: relative;
+  top: 500px;
+  padding: 50px;
+  font-size: 20px;
+  background-color: #fff;
+}
