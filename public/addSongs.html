@@ -77,10 +77,18 @@
             <h1>Input Song Manually</h1>
           </div>
           <div class="card-section">
-            <form>
-              <input type="text" id="songTitle" placeholder="Song Title">
-              <button type="button" class="success button" id="createPlaylist">Create</button>
-            </form>
+            <table>
+              <thead></thead>
+              <tbody>
+                <td><input type="text" id="artInput" placeholder="Artwork Link"></td>
+                <td><input type="text" id="trackTitleInput" placeholder="Track Title"></td>
+                <td><input type="text" id="artistNameInput" placeholder="Artist Name"></td>
+                <td><input type="text" id="albumNameInput" placeholder="Album Name"></td>
+                <td><input type="text" id="streamLinkInput" placeholder="Stream Link"></td>
+                <td><input type="text" id="moodInput" placeholder="Mood"></td>
+              </tbody>
+            </table>
+            <button type="button" class="success button addSong">Add Song</button>
           </div>
         </div>
       </div>
