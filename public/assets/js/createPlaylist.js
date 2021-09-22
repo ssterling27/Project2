@@ -8,7 +8,7 @@ document.getElementById('createPlaylist').addEventListener('click', event => {
     }
   })
   .then(({ data: { id }}) => {
-    window.location = `/playlists/${id}/add`
+    window.location = `/playlists/add/${id}`
   })
   .catch(err => console.log(err))
 })
