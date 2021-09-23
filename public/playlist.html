@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
     integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/playlist.css">  
+  <link rel="stylesheet" href="node_modules/foundation-sites/dist/css/foundation-sites.css">
+  <link rel="stylesheet" href="./assets/reset.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/foundation.css">
+  <link rel="stylesheet" href="./assets/css/parallax.css">
   <title>Document</title>
 </head>
 <!-- Top Bar   -->
@@ -20,35 +25,71 @@
       <li><a href="profile.html">Profile</a></li>
     </ul>
   </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li><a href="auth.html">Log In</a></li>
+    </ul>
+  </div>
 </div>
+
 <body>
 <!-- Parallax Background Image -->
-<div class="parallax">
-  <!-- Buttons     -->
-  <div class="button-group align-center expand">
-    <!-- <a class="secondary button">Playlist</a> -->
-    <a class="success button">Save</a>
-    <a class="alert button">Delete</a>
-    <button class="dropdown button">Sort by Mood</button>
-    </a>
+<!-- Create Playlist name -->
+<section id="parallax-1" class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <div class="card" style="margin-top: 50px;" >
+          <div class="grid-x grid-padding-x align-center-middle text-center" style="height: 100px;">
+            <h1 class="cell medium-4">Create Your Playlist</h1>
+          </div>
+          <input type="search" placeholder="Search">
+          <button type="button" class=" success button">Create</button>
+          <!-- Button     -->
+          <div class="button-group align-center expand">
+            <a class="success button">Save</a>
+            <a class="alert button">Delete</a>
+            <button class="dropdown button" type="button" data-toggle="mood-dropdown">Sort by Mood</button>
+            <div class="dropdown-pane" id="mood-dropdown" data-dropdown data-auto-focus="true">
+      </div>
+            </div>
+          </div>
+      <!-- Playlist card -->
+<div class="grid-container" style="margin-top: 30px;">
+  <div class="grid-x">
+    <div class="cell">
+      <div class="card">
+        <div class="card-divider">
+          <table id="playlistHere">
+          </table>
+        </div>
+        <div class="card-section">
+          <table>
+            <thead></thead>
+            <tbody id="songsHere"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
-<!-- Playlist Content -->
-  <div id="PlaylistHere"></div>
-  </div> 
-</div> 
+</div>
+      
+ 
+</section>
+<!-- Footer -->
   <footer class="footer bottom">
     <div class="bd-footer-title has-text-centered">
       <p>
-        <strong>Moodify</strong> © 2021 Samantha Mack, Samuel Steinberg, Jasmine Benson, Paul Pearce & Kenny Benavides. 
+        <strong>Moodify</strong> © 2021 Samantha Mack, Samuel Steinberg, Jasmine Benson, Paul Pearce & Kenny Benavides.
       </p>
     </div>
   </footer>
+  <div id="PlaylistHere" class="grid-x"></div>
 
-<!-- JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-  integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-<script src="./assets/playlist.js"></script>
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/foundation.core.min.js"></script>
 </body>
+
 </html>
-
-
