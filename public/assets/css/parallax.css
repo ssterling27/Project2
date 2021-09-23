@@ -32,7 +32,9 @@ body {
 }
 
 #parallax-2 {
-  background-color: blue;
+  background-color:rgb(73, 64, 64);
+  color: white;
+  text-align: center;
 }
 
 #parallax-2 hr {
