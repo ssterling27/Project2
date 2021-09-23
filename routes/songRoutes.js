@@ -12,30 +12,50 @@ router.get('/playlists/:pid/songs', (req, res) => {
 // get request for all songs belonging to a user
 let allsongs = []
 let playlist_ids = []
-router.get('/allsongs', passport.authenticate('jwt'), (req, res) => {
-  Playlist.findAll( { include: ['u'] } ) 
+router.get('/allsongs/:uid', passport.authenticate('jwt'), (req, res) => {
+  Playlist.findAll({ where: { uid: req.params.uid }, include: ['u'] } )
   .then(playlists => {
     playlists.forEach(playlist => {
       playlist_ids.push(playlist.dataValues.id)})
       Song.findAll({ where: { pid: playlist_ids } })
         .then(songs => {
-          songs.forEach(song => allsongs.key.push(song.dataValues))
-          res.json(allsongs)
+          res.json(songs)
         })
   }).catch(err => console.log(err))
   })
-    
 
-router.get('/allsongs/mood/:mid', passport.authenticate('jwt'), (req, res) => {
-  Playlist.findAll({ include: ['u'] })
+router.get('/playlists/:pid/song', (req, res) => {
+  Song.findOne({ where: { pid: req.params.pid }})
+  .then(song => res.json(song))
+  .catch(err => console.log(err))
+})
+
+router.get('/allsong/:uid', passport.authenticate('jwt'), (req, res) => {
+  Playlist.findOne({ where: { uid: req.params.uid }, include: ['u'] })
+    .then(playlist => {
+      Song.findOne({ where: { pid: playlist.id } })
+        .then(song => res.json(song))
+        })
+    .catch(err => console.log(err))
+    })
+
+
+
+router.get('/allsongs/:uid/mood/:mid', passport.authenticate('jwt'), (req, res) => {
+  Playlist.findAll({ where: { uid: req.params.uid }, include: ['u'] })
     .then(playlists => {
       playlists.forEach(playlist => {
         playlist_ids.push(playlist.dataValues.id)
       })
-      Song.findAll({ where: [{ pid: playlist_ids }, { mid: req.params.mid }] })
+      
+      Song.findAll({
+        where: {
+          pid: playlist_ids,
+          mood: req.params.mid
+      }
+    })
         .then(songs => {
-          songs.forEach(song => allsongs.key.push(song.dataValues))
-          res.json(allsongs)
+          res.json(songs)
         })
     }).catch(err => console.log(err))
 })
