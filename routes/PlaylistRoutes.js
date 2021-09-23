@@ -25,7 +25,7 @@ router.post('/playlists', passport.authenticate('jwt'), (req, res) => Playlist.c
   .catch(err => console.log(err))
 )
 
-router.put('/playlists/:pid', passport.authenticate('jwt'), (req, res) =>
+router.put('/playlists/:pid', (req, res) =>
   Playlist.update(req.body, { where: { id: req.params.pid } })
   .then(() => res.sendStatus(200))
   .catch(err => console.log(err))
