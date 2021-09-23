@@ -1,6 +1,14 @@
 let pid = window.location.href.split('/').pop()
 let public = false
 let thisUser = false
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 axios.get(`/api/playlists/${pid}`, {
   headers: {
@@ -31,7 +39,8 @@ document.getElementById('searchForSong').addEventListener('click', event => {
   const search = document.getElementById('songName').value
   axios.get(`http://ws.audioscrobbler.com/2.0/?method=track.search&track=${search}&api_key=7f3036e48535565b6ab375bd9c198876&format=json`)
     .then(({ data: { results: { trackmatches: { track: songs } } } }) => {
-      console.log(songs)
+      removeAllChildNodes(document.getElementById('songsHere'))
+      document.getElementById('songName').value = ''
       songs.forEach(song => {
         axios.get(`http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=7f3036e48535565b6ab375bd9c198876&artist=${song.artist}&track=${song.name}&format=json`)
           .then(({ data: { track } }) => {
@@ -46,6 +55,7 @@ document.getElementById('searchForSong').addEventListener('click', event => {
       <td><input type="text" class="moodInput" placeholder="Mood"></td>
       <button type="button" class="success button addSongSearch">Add Song</button>
       `
+            
             document.getElementById('songsHere').append(songElem)
           })
           .catch(function (error) {
@@ -68,7 +78,7 @@ document.addEventListener('click', event => {
     document.getElementById('albumNameInput').value = ''
     let link = document.getElementById('streamLinkInput').value
     document.getElementById('streamLinkInput').value = ''
-    let mood = document.getElementById('moodInput').value.toLowerCase()
+    let mood = capitalizeFirstLetter(document.getElementById('moodInput').value)
     document.getElementById('moodInput').value = ''
     let request = {
       title: track,
@@ -93,7 +103,7 @@ document.addEventListener('click', event => {
     artist = event.target.parentNode.childNodes[5].innerText
     album = event.target.parentNode.childNodes[7].innerText
     link = event.target.parentNode.childNodes[9].firstElementChild.href
-    mood = event.target.parentNode.childNodes[11].children[0].value.toLowerCase()
+    mood = capitalizeFirstLetter(event.target.parentNode.childNodes[11].children[0].value)
     let request = {
       title: track,
       artist: artist,

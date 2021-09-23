@@ -111,7 +111,7 @@ document.addEventListener('click', event => {
         songs.forEach(song => {
           const songElem = document.createElement('tr')
           songElem.innerHTML = `
-      <td>artwork</td>
+      <td><img src="${song.artwork}"></td>
       <td>${song.title}</td>
       <td>${song.artist}</td>
       <td>${song.album}</td>

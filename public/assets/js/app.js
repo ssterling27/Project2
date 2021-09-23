@@ -14,7 +14,7 @@ axios.get('/api/playlists', {
       // playlistElem.style = ''
       playlistElem.innerHTML = `
       <div class="card cardStyling">
-      <img class="playlistLink" src="https://thefirenote.com/wp-content/uploads/2017/12/lorde-melodrama-300x300.jpg">
+      <img class="playlistLink" src="">
       <div class="card-section playlistLink">
         <h5 class="playlistLink">${name}</h5>
         <h6 class="badge bg-primary rounded-pill playlistLink">${username}</h6>

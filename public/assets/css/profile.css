@@ -1,0 +1,8 @@
+.cardStyling {
+  width: 500px;
+}
+
+.cardStyling:hover {
+  border: 3px solid blue;
+  cursor: pointer;
+}
