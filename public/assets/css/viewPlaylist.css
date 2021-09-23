@@ -1,0 +1,25 @@
+/* body {
+  background-color: rgba(0, 0, 0, 0.349);
+} */
+
+/* .box {
+  width: 50vw;
+  height: 50vh; 
+  background-image: linear-gradient(red, blue);
+} */
+
+.bg-gradiant {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient( rgb(99, 95, 95),
+  rgb(243, 148, 40));
+  
+}
+
+.top-bar {
+  background-color: rgba(0, 0, 0, 0.555);
+}
+
+/* #menu {
+  background-color: red;
+} */

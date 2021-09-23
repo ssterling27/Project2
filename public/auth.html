@@ -29,38 +29,54 @@
   </div>
 </div>
 <body>
-  <form>
-    <div class="form-icons">
-      <h4>Login</h4>
-  
-      <div class="input-group">
-        <span class="input-group-label">
-          <i class="fa fa-user"></i>
-        </span>
-        <input class="input-group-field" type="text" placeholder="Username" id="username">
-      </div>
-  
-      <div class="input-group">
-        <span class="input-group-label">
-          <i class="fa fa-key"></i>
-        </span>
-        <input class="input-group-field" type="password" placeholder="Password" id="password">
-      </div>
+  <div class="bg-gradiant">  
+    <!-- Nav bar -->
+    <div class="top-bar">
+      <div class="top-bar-left">
+      <ul class="menu">
+        <li class="menu-text">Moodify</li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="playlist.html">Playlist</a></li>
+        <li><a href="songs.html">Search Songs</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
     </div>
-  
-    <button class="button expanded" id="login">Login</button>
-    <button class="button expanded" id="register">Register</button>
-  </form>
+  </div>
+ <!-- login form     -->
+<form>
+  <div class="form-icons">
+    <h4>Login</h4>
 
-  <div id="invalid" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="d-flex">
-      <div class="toast-body">
-        Invalid username or password.
-      </div>
-      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-user"></i>
+      </span>
+      <input class="input-group-field" type="text" placeholder="Username" id="username">
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <input class="input-group-field" type="password" placeholder="Password" id="password">
     </div>
   </div>
 
+  <button class="button expanded" id="login">Login</button>
+  <button class="button expanded" id="register">Register</button>
+</form>
+
+<div id="invalid" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+      Invalid username or password.
+    </div>
+    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</div>
+
+  </div>
+  
   <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
     integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
