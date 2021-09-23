@@ -42,8 +42,8 @@
           </div>
           <div class="card-section">
             <form>
-              <label for="songSearch">Song Name</label>
-              <input type="text" id="songSearch">
+              <label for="songName">Song Name</label>
+              <input type="text" id="songName">
               <button type="button" class="success button" id="searchForSong">Search</button>
             </form>
           </div>
@@ -51,6 +51,23 @@
       </div>
     </div>
   </div>
+
+  <div class="grid-container" style="margin-top: 30px;">
+    <div class="grid-x">
+      <div class="cell">
+        <div class="card">
+          <div class="card-divider" id="playlistHere"></div>
+          <div class="card-section">
+            <table>
+              <thead></thead>
+              <tbody id="songsHere"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <h5>OR</h5>
   <div class="grid-container" style="margin-top: 30px;">
     <div class="grid-x">
@@ -60,17 +77,25 @@
             <h1>Input Song Manually</h1>
           </div>
           <div class="card-section">
-            <form>
-              <input type="text" id="songTitle" placeholder="Song Title">
-              <button type="button" class="success button" id="createPlaylist">Create</button>
-            </form>
+            <table>
+              <thead></thead>
+              <tbody>
+                <td><input type="text" id="artInput" placeholder="Artwork Link"></td>
+                <td><input type="text" id="trackTitleInput" placeholder="Track Title"></td>
+                <td><input type="text" id="artistNameInput" placeholder="Artist Name"></td>
+                <td><input type="text" id="albumNameInput" placeholder="Album Name"></td>
+                <td><input type="text" id="streamLinkInput" placeholder="Stream Link"></td>
+                <td><input type="text" id="moodInput" placeholder="Mood"></td>
+              </tbody>
+            </table>
+            <button type="button" class="success button addSong">Add Song</button>
           </div>
         </div>
       </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="/assets/js/createPlaylist.js"></script>
+  <script src="../../assets/js/addSongs.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
     integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E</script>

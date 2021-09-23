@@ -9,8 +9,8 @@ router.get('/playlists', passport.authenticate('jwt'), (req, res) => {
   .catch(err => console.log(err))
 })
 
-router.get('/playlists/:pid', (req, res) => {
-  Playlist.findOne({ where: { id: req.params.pid } }, { include: ['u'] })
+router.get('/playlists/:pid', passport.authenticate('jwt'), (req, res) => {
+  Playlist.findOne({ where: {id: req.params.pid }, include: ['u']})
     .then(playlist => res.json(playlist))
     .catch(err => console.log(err))
 })
