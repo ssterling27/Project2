@@ -60,16 +60,15 @@ axios.get(`/api/playlists/${pid}`, {
           .then(({ data: songs }) => {
             console.log(songs)
             songs.forEach(song => {
-              console.log(song)
               const songElem = document.createElement('tr')
               songElem.innerHTML = `
-      <td>artwork</td>
+      <td><img src="${song.artwork}"></td>
       <td>${song.title}</td>
       <td>${song.artist}</td>
       <td>${song.album}</td>
       <td><a href="${song.link}">Link</a></td>
       <td>${song.mood}</td>
-      ${public || thisUser ? '<td><button type="button" class="alert button deleteSong">Delete</button></td>' : ''}
+      ${public || thisUser ? `<td><button type="button" id="${song.id}" class="alert button deleteSong">Delete</button></td>` : ''}
       `
               document.getElementById('songsHere').append(songElem)
               moods.push(song.mood)
@@ -81,9 +80,7 @@ axios.get(`/api/playlists/${pid}`, {
                 uniqueMoods.push(mood)
               }
             })
-            console.log(uniqueMoods)
             uniqueMoods.forEach(mood => {
-              console.log(mood)
               moodElem = document.createElement('li')
               moodElem.innerHTML = `<a class="dropdown-item moodSelector" href="">${mood}</a>`
               document.getElementById('moodsHere').append(moodElem)
@@ -120,10 +117,39 @@ document.addEventListener('click', event => {
       <td>${song.album}</td>
       <td><a href="${song.link}">Link</a></td>
       <td>${song.mood}</td>
-      ${public || thisUser ? '<td><button type="button" class="alert button deleteSong">Delete</button></td>' : ''}
+      ${public || thisUser ? `<td><button type="button" id="${song.id}" class="alert button deleteSong">Delete</button></td>` : ''}
       `
           document.getElementById('songsHere').append(songElem)
         })
       })
+  }
+})
+
+document.addEventListener('click', event => {
+  if (event.target.classList.contains('publicButton')) {
+    public = !public
+    axios.put(`/api/playlists/${pid}`, 
+      {
+      public: public
+    })
+    .then(() => {
+      if (event.target.textContent === 'Go Public') {
+        event.target.textContent = 'Hide'
+      } else {
+        event.target.textContent = 'Go Public'
+      }
+    })
+    .catch(err => console.error(err))
+  }
+  else if (event.target.classList.contains('deleteSong')) {
+    sid = event.target.id
+    axios.delete(`/api/playlists/${pid}/songs/${sid}`)
+    .then(() => {
+      event.target.parentNode.parentNode.remove()
+    })
+    .catch(err => console.log(err))
+  }
+  else if (event.target.classList.contains('addSongs')) {
+    window.location = `/playlists/add/${pid}`
   }
 })
