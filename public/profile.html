@@ -7,27 +7,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
     integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
+  
+<!-- </div> -->
 <!-- Top Bar   -->
-<div class="top-bar">
-  <div class="top-bar-left">
-    <ul class="menu">
-      <li class="menu-text">Moodify</li>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="playlist.html">Playlist</a></li>
-      <li><a href="songs.html">Search Songs</a></li>
-      <li><a href="profile.html">Profile</a></li>
-    </ul>
-  </div>
-</div>
 
 <body>
-  <!-- Parallax Background Image -->
-
-  <div class="grid-x" id="playlistsHere">
+  <div class="bg-gradiant">
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="menu">
+        <li class="menu-text">Moodify</li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="playlist.html">Playlist</a></li>
+        <li><a href="songs.html">Search Songs</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </div>
   </div>
 
+    <div class="grid-container" style="margin-top: 30px;">
+      <div class="grid-x">
+        <div class="cell">
+          <div class="card">
+            <div class="card-divider">
+              <h1>See all of your Favorite Songs</h1>
+            </div>
+            <div class="card-section">
+              <div class="grid-container" style="margin-top: 30px;">
+                <div class="grid-x">
+                  <div class="cell">
+                    <div class="card">
+                      <div class="card-divider">
+                        <table id="playlistHere">
+                        </table>
+                      </div>
+                      <div class="card-section">
+                        <table>
+                          <thead></thead>
+                          <tbody id="songsHere"></tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-container" style="margin-top: 30px;">
+      <div class="grid-x">
+        <div class="cell">
+          <div class="card">
+            <div class="card-divider" id="playlistHere"></div>
+            <div class="card-section">
+              <table>
+                <thead></thead>
+                <tbody id="songsHere"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-container" style="margin-top: 30px;">
+      <div class="grid-x">
+        <div class="cell">
+          <div class="card">
+            <div class="card-divider">
+              <h1>Created Playlists</h1>
+            </div>
+            <div class="card-section">
+              <div class="grid-container" style="margin-top: 30px;">
+                <div class="grid-x">
+                  <div class="cell">
+                    <div class="card">
+                      <div class="card-divider">
+                        <table id="playlistHere">
+                        </table>
+                      </div>
+                      <div class="card-section">
+                        <table>
+                          <thead></thead>
+                          <tbody id="songsHere"></tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+  </div>
+  <!-- Footer -->
+  <div class="grid-x" id="playlistsHere">
+  </div>
   <footer class="footer bottom">
     <div class="bd-footer-title has-text-centered">
       <p>
@@ -35,11 +118,10 @@
       </p>
     </div>
   </footer>
-
   <!-- JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
     integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="/assets/js/profile.js"></script>
 </body>
 

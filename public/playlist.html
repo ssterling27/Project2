@@ -11,34 +11,35 @@
   <link rel="stylesheet" href="./assets/reset.css">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/foundation.css">
-  <link rel="stylesheet" href="./assets/css/parallax.css">
   <title>Document</title>
 </head>
-<!-- Top Bar   -->
-<div class="top-bar">
-  <div class="top-bar-left">
-    <ul class="menu">
-      <li class="menu-text">Moodify</li>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="playlist.html">Playlist</a></li>
-      <li><a href="songs.html">Search Songs</a></li>
-      <li><a href="profile.html">Profile</a></li>
-    </ul>
-  </div>
-  <div class="top-bar-right">
-    <ul class="menu">
-      <li><a href="auth.html">Log In</a></li>
-    </ul>
-  </div>
-</div>
 
 <body>
-<!-- Parallax Background Image -->
-<!-- Create Playlist name -->
-<section id="parallax-1" class="hero is-primary">
-  <div class="hero-body">
-    <div class="container">
-      <div class="card" style="margin-top: 50px;" >
+  <div class="bg-gradiant">
+
+  <!-- Top Bar   -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="menu">
+        <li class="menu-text">Moodify</li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="playlist.html">Playlist</a></li>
+        <li><a href="addSongs.html">Search Songs</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><a href="auth.html">Log In</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Create Playlist name -->
+  <!-- <section id="parallax-1" class="hero is-primary"> -->
+    <div class="hero-body">
+      <div class="container">
+        <div class="card" style="margin-top: 50px;">
           <div class="grid-x grid-padding-x align-center-middle text-center" style="height: 100px;">
             <h1 class="cell medium-4">Create Your Playlist</h1>
           </div>
@@ -50,31 +51,31 @@
             <a class="alert button">Delete</a>
             <button class="dropdown button" type="button" data-toggle="mood-dropdown">Sort by Mood</button>
             <div class="dropdown-pane" id="mood-dropdown" data-dropdown data-auto-focus="true">
-      </div>
             </div>
           </div>
-      <!-- Playlist card -->
-<div class="grid-container" style="margin-top: 30px;">
-  <div class="grid-x">
-    <div class="cell">
-      <div class="card">
-        <div class="card-divider">
-          <table id="playlistHere">
-          </table>
         </div>
-        <div class="card-section">
-          <table>
-            <thead></thead>
-            <tbody id="songsHere"></tbody>
-          </table>
+        <!-- Playlist card -->
+        <div class="grid-container" style="margin-top: 30px;">
+          <div class="grid-x">
+            <div class="cell">
+              <div class="card">
+                <div class="card-divider">
+                  <table id="playlistHere">
+                  </table>
+                </div>
+                <div class="card-section">
+                  <table>
+                    <thead></thead>
+                    <tbody id="songsHere"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+
   </div>
-</div>
-      
- 
-</section>
+
 <!-- Footer -->
   <footer class="footer bottom">
     <div class="bd-footer-title has-text-centered">

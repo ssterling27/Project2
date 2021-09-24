@@ -7,6 +7,16 @@
   cursor: pointer;
 }
 
-.button{
+.button {
   color: orange;
+}
+
+.bg-gradiant {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient( rgb(99, 95, 95), rgb(243, 148, 40));
+}
+
+.top-bar {
+  background-color: rgba(0, 0, 0, 0.555);
 }
