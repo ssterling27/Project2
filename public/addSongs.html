@@ -12,6 +12,21 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
     integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/viewPlaylist.css">
+  <style>
+    .playlistCenter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .border {
+      border: 1px solid black;
+    }
+  </style>
 </head>
 
 <body>
@@ -19,10 +34,8 @@
     <div class="top-bar-left">
       <ul class="menu">
         <li class="menu-text">Moodify</li>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="playlist.html">Playlist</a></li>
-        <li><a href="songs.html">Search Songs</a></li>
-        <li><a href="profile.html">Profile</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/profile">Profile</a></li>
       </ul>
     </div>
   </div>
@@ -33,6 +46,10 @@
     <button class="dropdown button">Sort by Mood</button>
     </a>
   </div> -->
+  <div class="grid-container border" style="margin-top: 30px;">
+    <div class="grid-x" id="playlistName">
+    </div>
+  </div>
   <div class="grid-container" style="margin-top: 30px;">
     <div class="grid-x">
       <div class="cell">
@@ -68,7 +85,7 @@
     </div>
   </div>
 
-  <h5>OR</h5>
+  <h4 class="center">OR</h4>
   <div class="grid-container" style="margin-top: 30px;">
     <div class="grid-x">
       <div class="cell">

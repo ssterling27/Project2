@@ -19,6 +19,13 @@ axios.get(`/api/playlists/${pid}`, {
     console.log(playlist)
     playlistUser = playlist.uid
     public = playlist.public
+    const playlistNameElem = document.createElement('div')
+    playlistNameElem.classList = 'cell playlistCenter'
+    playlistNameElem.innerHTML = `
+    <h2>${playlist.name}</h2>
+    <button style="margin-bottom: 0px;" type="button" class="button warning goToPlaylist">Go to Playlist</button>
+    `
+    document.getElementById('playlistName').append(playlistNameElem)
     axios.get('/api/users/playlists', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -47,7 +54,7 @@ document.getElementById('searchForSong').addEventListener('click', event => {
             console.log(track)
             const songElem = document.createElement('tr')
             songElem.innerHTML = `
-      <td><img src="${track.album.image[1]['#text']}"></td>
+      <td><img src="${track.album.image[3]['#text']}"></td>
       <td>${track.name}</td>
       <td>${track.artist.name}</td>
       <td>${track.album.title}</td>
@@ -119,5 +126,8 @@ document.addEventListener('click', event => {
       }
     })
       .then(() => event.target.parentNode.remove())
+  }
+  else if (event.target.classList.contains('goToPlaylist')) {
+    window.location = `/playlists/${pid}`
   }
 })

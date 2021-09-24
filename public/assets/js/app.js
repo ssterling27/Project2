@@ -1,6 +1,6 @@
 const { axios } = window
 
-axios.get('/api/playlists', {
+axios.get('/api/playlists/public', {
   headers: {
     Authorization: `Bearer ${localStorage.getItem('token')}`
   }
@@ -8,13 +8,15 @@ axios.get('/api/playlists', {
   .then(({ data: playlists }) => {
     console.log(playlists)
     playlists.forEach(({ id, name, u: { username }}) => {
+      axios.get(`../api/playlists/${id}/song`)
+      .then(({data: song }) => {
       const playlistElem = document.createElement('div')
       playlistElem.classList = 'cell small-4'
       playlistElem.id = `${id}`
       // playlistElem.style = ''
       playlistElem.innerHTML = `
       <div class="card cardStyling">
-      <img class="playlistLink" src="">
+      <img class="playlistLink" src="${song.artwork}">
       <div class="card-section playlistLink">
         <h5 class="playlistLink">${name}</h5>
         <h6 class="badge bg-primary rounded-pill playlistLink">${username}</h6>
@@ -22,12 +24,13 @@ axios.get('/api/playlists', {
       </div>
       `
       document.getElementById('PlaylistHere').append(playlistElem)
+      })
     })
   })
 
 .catch (err => {
   console.log(err)
-  window.location = '/auth.html'
+  window.location = '/login'
 })
 
 document.addEventListener('click', event => {

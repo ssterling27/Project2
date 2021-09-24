@@ -7,89 +7,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
     integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
 </head>
 <!-- Top Bar   -->
 <div class="top-bar">
   <div class="top-bar-left">
     <ul class="menu">
       <li class="menu-text">Moodify</li>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="playlist.html">Playlist</a></li>
-      <li><a href="songs.html">Search Songs</a></li>
-      <li><a href="profile.html">Profile</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/profile">Profile</a></li>
     </ul>
   </div>
 </div>
 
 <body>
-  <section id="parallax-1" class="hero is-primary">
-    <div class="grid-container" style="margin-top: 30px;">
-      <div class="grid-x">
-        <div class="cell">
-          <div class="card">
-            <div class="card-divider">
-              <h1>See all of your Favorite Songs</h1>
-            </div>
-            <div class="card-section">
-                <div class="grid-container" style="margin-top: 30px;">
-                  <div class="grid-x">
-                    <div class="cell">
-                      <div class="card">
-                        <div class="card-divider">
-                          <table id="playlistHere">
-                          </table>
-                        </div>
-                        <div class="card-section">
-                          <table>
-                            <thead></thead>
-                            <tbody id="songsHere"></tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid-container" style="margin-top: 30px;">
-      <div class="grid-x">
-        <div class="cell">
-          <div class="card">
-            <div class="card-divider" id="playlistHere"></div>
-            <div class="card-section">
-              <table>
-                <thead></thead>
-                <tbody id="songsHere"></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="grid-container" style="margin-top: 30px;">
-      <div class="grid-x">
-        <div class="cell">
-          <div class="card">
-            <div class="card-divider">
-              <h1>Created Playlists</h1>
-            </div>
-            <div class="card-section">
-                <div class="grid-container" style="margin-top: 30px;">
-                  <div class="grid-x" id="playlistsHere">
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   
-
+  <div class="hero-body">
+    <section class="hero">
+  
+      <div class="hero-content">
+        <div class="boxArea">
+          <h1 class="hero-title" style="margin-bottom: 20px;">
+            Your Profile
+          </h1>
+  
+          <div id="playlistsHere" class="grid-x"></div>
+        </div>
+    </section>
+    </div>
 
 
 
