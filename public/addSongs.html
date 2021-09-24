@@ -27,6 +27,11 @@
     .border {
       border: 1px solid black;
     }
+    .nameBox {
+      background-color: aliceblue;
+      border-radius: 15px;
+      border: 3px solid rgb(194, 219, 241);
+    }
   </style>
 </head>
 
@@ -41,8 +46,18 @@
           <li><a href="/">Home</a></li>
           <li><a href="/profile">Profile</a></li>
         </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <li><a href="/login" class="button warning" id="logOut">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
 
-  
+  <div class="grid-container nameBox" style="margin-top: 30px;">
+    <div class="grid-x" id="playlistName">
+    </div>
+  </div>
 
     <div class="grid-container" style="margin-top: 30px;">
       <div class="grid-x">
@@ -79,7 +94,7 @@
   </div>
 
      
-    <h5>OR</h5>
+    <h3 class="center">OR</h3>
     <div class="grid-container" style="margin-top: 30px;">
       <div class="grid-x">
         <div class="cell">

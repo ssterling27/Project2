@@ -89,6 +89,8 @@ axios.get(`/api/playlists/${pid}`, {
       })
   })
 
+  .catch(err => window.location = '/login')
+
 
 
 
@@ -152,4 +154,9 @@ document.addEventListener('click', event => {
   else if (event.target.classList.contains('addSongs')) {
     window.location = `/playlists/add/${pid}`
   }
+})
+
+document.getElementById('logOut').addEventListener('click', () => {
+  localStorage.removeItem('token')
+  window.location = '/login'
 })
