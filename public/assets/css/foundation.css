@@ -2440,7 +2440,7 @@ ul.no-bullet, ol.no-bullet {
     font-size: 1.25rem; }
   .button.expanded {
     display: block;
-    width: 100%;
+    width: 75%;
     margin-right: 0;
     margin-left: 0; }
   .button, .button.disabled, .button[disabled], .button.disabled:hover, .button[disabled]:hover, .button.disabled:focus, .button[disabled]:focus {
@@ -2450,7 +2450,7 @@ ul.no-bullet, ol.no-bullet {
     background-color: #14679e;
     color: #fefefe; }
   .button.primary, .button.primary.disabled, .button.primary[disabled], .button.primary.disabled:hover, .button.primary[disabled]:hover, .button.primary.disabled:focus, .button.primary[disabled]:focus {
-    background-color: #1779ba;
+    background-color: #767676;
     color: #fefefe; }
   .button.primary:hover, .button.primary:focus {
     background-color: #126195;

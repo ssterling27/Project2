@@ -37,8 +37,17 @@ app.get('/playlists/:pid', (req, res) => {
 app.get('/create', (req, res) => {
   res.sendFile(join(__dirname, 'public/createPlaylist.html'))
 })
-app.get('/playlists/add/:pid', (req, res )=> {
+app.get('/playlists/add/:pid', (req, res ) => {
   res.sendFile(join(__dirname, 'public/addSongs.html'))
+})
+app.get('/login', (req, res) => {
+  res.sendFile(join(__dirname, 'public/auth.html'))
+})
+app.get('/profile', (req, res) => {
+  res.sendFile(join(__dirname, 'public/profile.html'))
+})
+app.get('/allSongs/:uid', (req, res) => {
+  res.sendFile(join(__dirname, 'public/allSongs.html'))
 })
 // requiring database, syncing, then opening server
 require('./db')

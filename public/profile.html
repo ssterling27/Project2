@@ -7,12 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
     integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-  <link rel="stylesheet" href="node_modules/foundation-sites/dist/css/foundation-sites.css">
-  <link rel="stylesheet" href="./assets/reset.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/foundation.css">
-  <link rel="stylesheet" href="./assets/css/parallax.css">
-  <title>Moodify</title>
 </head>
 <!-- Top Bar   -->
 <div class="top-bar">
@@ -25,15 +19,9 @@
       <li><a href="profile.html">Profile</a></li>
     </ul>
   </div>
-  <div class="top-bar-right">
-    <ul class="menu">
-      <li><a href="auth.html">Log In</a></li>
-    </ul>
-  </div>
 </div>
 
 <body>
-  <!-- Parallax Background Image -->
   <section id="parallax-1" class="hero is-primary">
     <div class="grid-container" style="margin-top: 30px;">
       <div class="grid-x">
@@ -91,21 +79,7 @@
             </div>
             <div class="card-section">
                 <div class="grid-container" style="margin-top: 30px;">
-                  <div class="grid-x">
-                    <div class="cell">
-                      <div class="card">
-                        <div class="card-divider">
-                          <table id="playlistHere">
-                          </table>
-                        </div>
-                        <div class="card-section">
-                          <table>
-                            <thead></thead>
-                            <tbody id="songsHere"></tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="grid-x" id="playlistsHere">
                   </div>
                 </div>
             </div>
@@ -114,22 +88,24 @@
       </div>
     </div>
   </section>
-  <!-- Footer -->
+  
+
+
+
+
   <footer class="footer bottom">
     <div class="bd-footer-title has-text-centered">
       <p>
-        <strong>Moodify</strong> © 2021 Samantha Mack, Samuel Steinberg, Jasmine Benson, Paul Pearce & Kenny
-        Benavides.
+        <strong>Moodify</strong> © 2021 Samantha Mack, Samuel Steinberg, Jasmine Benson, Paul Pearce & Kenny Benavides.
       </p>
     </div>
   </footer>
-  <div id="PlaylistHere" class="grid-x"></div>
 
   <!-- JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
     integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/foundation.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/assets/js/profile.js"></script>
 </body>
 
 </html>
