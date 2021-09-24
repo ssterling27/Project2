@@ -40,14 +40,27 @@
         <div class="cell">
           <div class="card">
             <div class="card-divider">
-              <h1>Search for a Song</h1>
+              <h1>See all of your Favorite Songs</h1>
             </div>
             <div class="card-section">
-              <form>
-                <label for="songName">Song Name</label>
-                <input type="text" id="songName">
-                <button type="button" class="success button" id="searchForSong">Search</button>
-              </form>
+                <div class="grid-container" style="margin-top: 30px;">
+                  <div class="grid-x">
+                    <div class="cell">
+                      <div class="card">
+                        <div class="card-divider">
+                          <table id="playlistHere">
+                          </table>
+                        </div>
+                        <div class="card-section">
+                          <table>
+                            <thead></thead>
+                            <tbody id="songsHere"></tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
@@ -74,21 +87,27 @@
         <div class="cell">
           <div class="card">
             <div class="card-divider">
-              <h1>Input Song Manually</h1>
+              <h1>Created Playlists</h1>
             </div>
             <div class="card-section">
-              <table>
-                <thead></thead>
-                <tbody>
-                  <td><input type="text" id="artInput" placeholder="Artwork Link"></td>
-                  <td><input type="text" id="trackTitleInput" placeholder="Track Title"></td>
-                  <td><input type="text" id="artistNameInput" placeholder="Artist Name"></td>
-                  <td><input type="text" id="albumNameInput" placeholder="Album Name"></td>
-                  <td><input type="text" id="streamLinkInput" placeholder="Stream Link"></td>
-                  <td><input type="text" id="moodInput" placeholder="Mood"></td>
-                </tbody>
-              </table>
-              <button type="button" class="success button addSong">Add Song</button>
+                <div class="grid-container" style="margin-top: 30px;">
+                  <div class="grid-x">
+                    <div class="cell">
+                      <div class="card">
+                        <div class="card-divider">
+                          <table id="playlistHere">
+                          </table>
+                        </div>
+                        <div class="card-section">
+                          <table>
+                            <thead></thead>
+                            <tbody id="songsHere"></tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
