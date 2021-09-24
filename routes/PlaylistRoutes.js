@@ -9,6 +9,12 @@ router.get('/playlists', passport.authenticate('jwt'), (req, res) => {
   .catch(err => console.log(err))
 })
 
+router.get('/playlists/public', passport.authenticate('jwt'), (req, res) => {
+  Playlist.findAll({ where: { public: true}, include: ['u'] } )
+  .then(playlists => res.json(playlists))
+  .catch(err => console.log(err))
+})
+
 router.get('/playlists/user/:uid', passport.authenticate('jwt'), (req, res) => {
   Playlist.findAll({ where: { uid: req.params.uid }, include: ['u'] })
     .then(playlists => res.json(playlists))

@@ -10,3 +10,23 @@
 .button{
   color: orange;
 }
+
+.boxArea {
+  margin-top: 50px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 50px;
+  
+}
+
+.hero-content {
+  background-color: aliceblue;
+  width: 90%;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border: 4px solid rgb(186, 217, 245);
+}
+

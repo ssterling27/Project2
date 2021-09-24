@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
     integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
       <link rel="stylesheet" href="./assets/reset.css">
       <link rel="stylesheet" href="./assets/css/style.css">
       <link rel="stylesheet" href="./assets/css/index.css">
@@ -20,16 +20,14 @@
     <div class="top-bar-left">
       <ul class="menu">
         <li class="menu-text">Moodify</li>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="playlist.html">Playlist</a></li>
-        <li><a href="addSongs.html">Search Songs</a></li>
-        <li><a href="profile.html">Profile</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/profile">Profile</a></li>
       </ul>
     </div>
     <!-- Right-side Nav bar -->
     <div class="top-bar-right">
       <ul class="menu">
-        <li><a href="./auth.html" class="button warning">Login</a></li>
+        <li><a href="/login" class="button warning">Login</a></li>
       </ul>
     </div>
   </div>
@@ -40,39 +38,31 @@
     <button class="dropdown button">Sort by Mood</button>
     </a>
   </div> -->
-
+  
     <div class="hero-body">
       <section class="hero">
       
         <div class="hero-content">
-      
-          <h1 class="hero-title">
+          <div class="boxArea">
+          <h1 class="hero-title" style="margin-bottom: 20px;">
             Moodify
           </h1>
 
-          <a href="./createPlaylist.html" class="button warning large">Create a New Playlist</a>
-          <a href="./viewPlaylist.html" class="button warning large">View your Profile</a>
+          <a href="/create" class="button warning large">Create a New Playlist</a>
+          <a href="/profile" class="button warning large">View your Profile</a>
       
-          <h2 class="hero-subtitle">
+          <h2 class="hero-subtitle" style="margin-bottom: 20px;">
             Create customizable playlists according to your tastes without those unwanted songs!
           </h2>
 
-          <div class="card" style="width: 300px;">
-            <div class="card-divider">
-              Example Playlist
-            </div>
-            <img src="assets/img/generic/rectangle-1.jpg">
-            <div class="card-section">
-              <h4>This is a card.</h4>
-              <p>It has an easy to override visual style, and is appropriately subdued.</p>
-            </div>
-          </div>
+          <div id="PlaylistHere" class="grid-x"></div>
       
       
         </div>
       
       </section>
 
+</div>
 </div>
   
   <!-- Footer -->
@@ -83,11 +73,10 @@
         </p>
       </div>
     </footer>
-  <div id="PlaylistHere" class="grid-x"></div>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="./assets/js/app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
     integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E</script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E</script>
 </body>
 </html>

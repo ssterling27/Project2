@@ -62,7 +62,7 @@ axios.get(`/api/playlists/${pid}`, {
             songs.forEach(song => {
               const songElem = document.createElement('tr')
               songElem.innerHTML = `
-      <td><img src="${song.artwork}"></td>
+      <td><img src="${song.artwork}" style="width: 100px;"></td>
       <td>${song.title}</td>
       <td>${song.artist}</td>
       <td>${song.album}</td>
@@ -111,7 +111,7 @@ document.addEventListener('click', event => {
         songs.forEach(song => {
           const songElem = document.createElement('tr')
           songElem.innerHTML = `
-      <td><img src="${song.artwork}"></td>
+      <td><img src="${song.artwork} style="width: 100px;"></td>
       <td>${song.title}</td>
       <td>${song.artist}</td>
       <td>${song.album}</td>
