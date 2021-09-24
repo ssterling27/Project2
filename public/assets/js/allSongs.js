@@ -16,7 +16,7 @@ function removeAllChildNodes(parent) {
 }
 
   
-    axios.get('../api/users/playlists', {
+  axios.get('../api/users/playlists', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
@@ -46,7 +46,7 @@ function removeAllChildNodes(parent) {
       songs.forEach(song => {
         const songElem = document.createElement('tr')
         songElem.innerHTML = `
-      <td><img src="${song.artwork}"></td>
+      <td><img src="${song.artwork}" style="width: 100px;"></td>
       <td>${song.title}</td>
       <td>${song.artist}</td>
       <td>${song.album}</td>
@@ -68,6 +68,7 @@ function removeAllChildNodes(parent) {
         })
     })
   })
+  .catch(err => window.location = '/login')
     
  
 
@@ -94,7 +95,7 @@ function removeAllChildNodes(parent) {
           songs.forEach(song => {
             const songElem = document.createElement('tr')
             songElem.innerHTML = `
-      <td><img src ="${song.artwork}"></td>
+      <td><img src ="${song.artwork}" style="width: 100px;"></td>
       <td>${song.title}</td>
       <td>${song.artist}</td>
       <td>${song.album}</td>
@@ -106,3 +107,8 @@ function removeAllChildNodes(parent) {
         })
     }
   })
+
+document.getElementById('logOut').addEventListener('click', () => {
+  localStorage.removeItem('token')
+  window.location = '/login'
+})

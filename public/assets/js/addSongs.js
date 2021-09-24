@@ -20,7 +20,7 @@ axios.get(`/api/playlists/${pid}`, {
     playlistUser = playlist.uid
     public = playlist.public
     const playlistNameElem = document.createElement('div')
-    playlistNameElem.classList = 'cell playlistCenter'
+    playlistNameElem.classList = 'cell playlistCenter nameArea'
     playlistNameElem.innerHTML = `
     <h2>${playlist.name}</h2>
     <button style="margin-bottom: 0px;" type="button" class="button warning goToPlaylist">Go to Playlist</button>
@@ -41,6 +41,7 @@ axios.get(`/api/playlists/${pid}`, {
         }
       })
   })
+  .catch(err => window.location = '/login')
 
 document.getElementById('searchForSong').addEventListener('click', event => {
   const search = document.getElementById('songName').value
@@ -130,4 +131,9 @@ document.addEventListener('click', event => {
   else if (event.target.classList.contains('goToPlaylist')) {
     window.location = `/playlists/${pid}`
   }
+})
+
+document.getElementById('logOut').addEventListener('click', () => {
+  localStorage.removeItem('token')
+  window.location = '/login'
 })

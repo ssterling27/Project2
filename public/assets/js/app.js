@@ -39,3 +39,8 @@ document.addEventListener('click', event => {
     window.location = `/playlists/${pid}`
   }
 })
+
+document.getElementById('logOut').addEventListener('click', () => {
+  localStorage.removeItem('token')
+  window.location = '/login'
+})

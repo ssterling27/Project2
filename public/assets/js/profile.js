@@ -54,7 +54,7 @@ axios.get(`../api/users/playlists`, {
     })
   })
 
-  .catch(err => console.log(err))
+  .catch(err => window.location = '/login')
 
 
 // axios.get('/api/playlists', {
@@ -92,4 +92,9 @@ document.addEventListener('click', event => {
   else if (event.target.classList.contains('allSongsLink')) {
     window.location = `/allSongs/${user_id}`
   }
+})
+
+document.getElementById('logOut').addEventListener('click', () => {
+  localStorage.removeItem('token')
+  window.location = '/login'
 })
