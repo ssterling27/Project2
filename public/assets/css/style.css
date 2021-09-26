@@ -1,14 +1,27 @@
+.content {
+  max-width: 1800px;
+  margin: auto;
+}
 
 
 .cardStyling:hover {
-  border: 3px solid blue;
+  border: 4px solid rgb(0, 206, 233);
   cursor: pointer;
 }
 
 .button {
-  color: orange;
+  color: black;
+  background-color: rgb(255, 82, 134);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
+.button:hover {
+  background-color: rgb(0, 206, 233);
+}
 
 .bg-gradiant {
   height: 100vh;
@@ -21,22 +34,90 @@
 }
 
 .boxArea {
-  margin-top: 50px;
+  margin-top: 25px;
   margin-right: 20px;
   margin-left: 20px;
-  margin-bottom: 50px;
-  
+  margin-bottom: 30px;
 }
 
-.hero-content {
-  background-color: aliceblue;
-  width: 90%;
+.heroArea {
+  background-color: rgb(255, 240, 253);
+  /* width: 90%; */
   border-radius: 25px;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   -ms-border-radius: 25px;
   -o-border-radius: 25px;
-  border: 4px solid rgb(186, 217, 245);
+  border: 3px solid rgb(0, 206, 233);
 }
 
+.enterSign {
+  position: relative;
+  z-index: 1;
+}
 
+.text {
+  font-size: 4rem;
+  fill: none;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-dasharray: 70 330;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke 6s infinite linear;
+  animation: stroke 6s infinite linear;
+}
+
+.text:nth-child(5n+1) {
+  stroke: #F2385A;
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s;
+}
+
+.text:nth-child(5n+2) {
+  stroke: #F5A503;
+  -webkit-animation-delay: -2.4s;
+  animation-delay: -2.4s;
+}
+
+.text:nth-child(5n+3) {
+  stroke: #E9F1DF;
+  -webkit-animation-delay: -3.6s;
+  animation-delay: -3.6s;
+}
+
+.text:nth-child(5n+4) {
+  stroke: #56D9CD;
+  -webkit-animation-delay: -4.8s;
+  animation-delay: -4.8s;
+}
+
+.text:nth-child(5n+5) {
+  stroke: #3AA1BF;
+  -webkit-animation-delay: -6s;
+  animation-delay: -6s;
+}
+
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+
+svg {
+  position: relative;
+  /* width: 100%; */
+  margin-top: 20px;
+  margin-bottom: -100px;
+}
+
+@media screen and (max-width: 1300px) {
+  svg {
+    margin-bottom: -50px;
+  }
+}

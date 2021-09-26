@@ -12,71 +12,169 @@
       <link rel="stylesheet" href="./assets/reset.css">
       <link rel="stylesheet" href="./assets/css/style.css">
       <link rel="stylesheet" href="./assets/css/index.css">
+      <link rel="stylesheet" href="./assets/css/materialize.css">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Yaldevi:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap');
+        .carouselThing {
+          width: 200%;
+          margin-left: -53%;
+          margin-top: -180px;
+          border-radius: 5px;
+          border: 3px solid rgb(255, 62, 120);
+        }
+        .carousel {
+          z-index: 2;
+          height: 620px;
+        }
+        .header {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: 'Yaldevi', sans-serif;
+          margin-bottom: 0.75rem;
+          font-size: 2rem;
+          padding: 10px;
+          /* font-weight: bold; */
+        }
+        .cut {
+          margin-top: -25px;
+        }
+        .userButton {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+        .rounded-pill {
+          font-size: 1rem;
+          padding: 10px;
+          margin-bottom: -10px;
+          margin-top: -10px;
+          background-color: rgb(15, 179, 255);
+        }
+        .button {
+          margin: 0;
+          font-size: 1rem;
+        }
+        .bottom {
+          padding-bottom: 0;
+        }
+        #logOut {
+          padding-top: 11px;
+          padding-bottom: 11.5px;
+        }
+        .enterSign {
+         margin-bottom: -20px;
+         font-family: 'Nunito', sans-serif;
+        }
+        .hero-body {
+          /* margin-top: -30px; */
+        }
+        .top-bar {
+          background-color: rgba(0, 206, 233, 0.8);
+        }
+        .top-bar ul {
+          max-width: 1800px;
+          margin: auto;
+          background-color: rgba(255, 82, 134, 0.8);
+          border-radius: 10px;
+          border: 2px solid rgba(221, 0, 66, 0.6)
+        }
+        .space {
+          margin-left: 6px;
+          margin-right: 6px;
+          margin-bottom: 20px;
+        }
+        .link {
+          color: rgb(4, 43, 219);
+        }
+        .link:hover {
+          color:rgb(0, 22, 121)
+        }
+        .menu {
+          color: aliceblue;
+        }
+        .warning {
+          position: absolute;
+          right: 0;
+        }
+      </style>
 </head>
 <body>
 <!-- Nav bar -->
   <div class="top-bar">
     <!-- Left-side Nav bar -->
-    <div class="top-bar-left">
+    <div class="top-bar-left" style="font-family: 'Yaldevi', sans-serif; font-size: 1.25rem;">
       <ul class="menu">
-        <li class="menu-text">Moodify</li>
-        <li><a href="/">Home</a></li>
-        <li><a href="/profile">Profile</a></li>
-      </ul>
-    </div>
-    <!-- Right-side Nav bar -->
-    <div class="top-bar-right">
-      <ul class="menu">
+        <li class="menu-text logo">Moodify</li>
+        <li><a class="link" href="/">Home</a></li>
+        <li><a class="link" href="/profile">Profile</a></li>
+        <li><a class="link" href="/create">Create</a></li>
         <li><a href="/login" class="button warning" id="logOut">Log Out</a></li>
       </ul>
     </div>
+    </div>
   </div>
-  <!-- <div class="button-group align-center expand">
-   
-    <a class="success button">Save</a>
-    <a class="alert button">Delete</a>
-    <button class="dropdown button">Sort by Mood</button>
-    </a>
-  </div> -->
   
+  
+  
+  <section class="hero">
+    <div class="content">
+    <div class="enterSign">
+      <svg viewBox="0 0 500 100">
+        <!-- Symbol-->
+        <symbol id="s-text">
+          <text text-anchor="middle" x="50%" y="30%" dy=".35em">MOODIFY</text>
+        </symbol>
+        <!-- Duplicate symbols-->
+        <use class="text" xlink:href="#s-text"></use>
+        <use class="text" xlink:href="#s-text"></use>
+        <use class="text" xlink:href="#s-text"></use>
+        <use class="text" xlink:href="#s-text"></use>
+        <use class="text" xlink:href="#s-text"></use>
+      </svg>
+    </div>
     <div class="hero-body">
-      <section class="hero">
-      
-        <div class="hero-content">
-          <div class="boxArea">
-          <h1 class="hero-title" style="margin-bottom: 20px;">
-            Moodify
-          </h1>
-
-          <a href="/create" class="button warning large">Create a New Playlist</a>
-          <a href="/profile" class="button warning large">View your Profile</a>
-      
-          <h2 class="hero-subtitle" style="margin-bottom: 20px;">
-            Create customizable playlists according to your tastes without those unwanted songs!
-          </h2>
-
-          <div id="PlaylistHere" class="grid-x"></div>
-      
-      
+        <div class="carousel" id="carouselItemsHere">
+          <a class="carousel-item" href="#one!" id="carouselItem0Here"></a>
+          <a class="carousel-item" href="#two!" id="carouselItem1Here"></a>
+          <a class="carousel-item" href="#three!" id="carouselItem2Here"></a>
+          <a class="carousel-item" href="#four!" id="carouselItem3Here"></a>
+          <a class="carousel-item" href="#five!" id="carouselItem4Here"></a>
         </div>
-      
-      </section>
+        <div class="hero-content heroArea">
+          <div class="boxArea">
+          
+          <a href="/create" class="button large">Create a New Playlist</a>
+          <a href="/profile" class="button large">View your Profile</a>
 
-</div>
-
-  
-  <!-- Footer -->
-    <footer class="footer bottom">
-      <div class="bd-footer-title has-text-centered">
-        <p>
-          <strong>Moodify</strong> © 2021 Samantha Mack, Samuel Steinberg, Jasmine Benson, Paul Pearce & Kenny Benavides.
-        </p>
+          <div id="PlaylistHere" class="grid-x" style="margin-top: 20px;"></div>
+        </div>
       </div>
-    </footer>
+      <footer class="footer bottom hero-content">
+        <div class="bd-footer-title has-text-centered">
+          <p class="header" style="font-size:1.25rem; color:azure;">
+            Moodify© 2021 Samantha Mack, Samuel Steinberg, Jasmine Benson, & Paul Pearce.
+          </p>
+        </div>
+      </footer>
+      </div>
+      <div>
+        <p>TEXT</p>
+      </div>
+      
+    </div>
+   </section>
+
+ 
+  <!-- Footer -->
+    
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="./assets/js/app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+  
+  <!-- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
     integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E"></script> -->
+  <script src="./assets/js/materialize.js"></script>
+  <script src="./assets/js/app.js"></script>
 </body>
 </html>
