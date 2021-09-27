@@ -49,7 +49,7 @@ axios.get(`/api/playlists/${pid}`, {
 
 document.getElementById('searchForSong').addEventListener('click', event => {
   const search = document.getElementById('songName').value
-  axios.get(`http://ws.audioscrobbler.com/2.0/?method=track.search&track=${search}&api_key=7f3036e48535565b6ab375bd9c198876&format=json`)
+  axios.get(`https://ws.audioscrobbler.com/2.0/?method=track.search&track=${search}&api_key=7f3036e48535565b6ab375bd9c198876&format=json`)
     .then(({ data: { results: { trackmatches: { track: songs } } } }) => {
       const createResults = () => {
         const resultsElem = document.createElement('div')
@@ -64,7 +64,7 @@ document.getElementById('searchForSong').addEventListener('click', event => {
       }
       document.getElementById('songName').value = ''
       songs.forEach(song => {
-        axios.get(`http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=7f3036e48535565b6ab375bd9c198876&artist=${song.artist}&track=${song.name}&format=json`)
+        axios.get(`https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=7f3036e48535565b6ab375bd9c198876&artist=${song.artist}&track=${song.name}&format=json`)
           .then(({ data: { track } }) => {
             const songElem = document.createElement('div')
             songElem.classList = 'grid-x grid-margin-x font'
