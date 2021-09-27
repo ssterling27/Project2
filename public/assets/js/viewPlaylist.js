@@ -50,6 +50,7 @@ axios.get(`/api/playlists/${pid}`, {
     ${thisUser && !public ? '<td><button type="button" class="button publicButton">Go Public</button></td>' : '' }
     ${!thisUser && public ? '<td><h5 style="color:blue;">Public</h5></td>' : '' }
     ${!thisUser && !public ? '<td><h5 style="color:red;">Not Public</h5></td>' : '' }
+    ${thisUser ? '<td><button type="button" class="button playlistDelete">Delete Playlist</button></td>' : ''}
     `
         document.getElementById('playlistHere').append(playlistElem)
         axios.get(`/api/playlists/${pid}/songs`, {
@@ -153,6 +154,13 @@ document.addEventListener('click', event => {
   }
   else if (event.target.classList.contains('addSongs')) {
     window.location = `/playlists/add/${pid}`
+  }
+  else if (event.target.classList.contains('playlistDelete')) {
+    axios.delete(`/api/playlists/${pid}`)
+    .then(() => {
+      window.location = '/'
+    })
+    .catch(err => console.log(err))
   }
 })
 

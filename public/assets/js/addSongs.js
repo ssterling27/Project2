@@ -20,12 +20,17 @@ axios.get(`/api/playlists/${pid}`, {
     playlistUser = playlist.uid
     public = playlist.public
     const playlistNameElem = document.createElement('div')
-    playlistNameElem.classList = 'cell playlistCenter nameArea'
+    playlistNameElem.classList = 'enterSign has-text-centered'
     playlistNameElem.innerHTML = `
-    <h2>${playlist.name}</h2>
-    <button style="margin-bottom: 0px;" type="button" class="button warning goToPlaylist">Go to Playlist</button>
+    <h1 class="loginTitle">${playlist.name}</h1><br>
     `
-    document.getElementById('playlistName').append(playlistNameElem)
+    playlistButtonElem = document.createElement('div')
+    playlistButtonElem.classList = 'enterSign has-text-centered'
+    playlistButtonElem.innerHTML = `
+    <button style="margin-bottom: 0px;" type="button" class="button goToPlaylist">Go to Playlist</button>
+    `
+    document.getElementById('playlistName').prepend(playlistButtonElem)
+    document.getElementById('playlistName').prepend(playlistNameElem)
     axios.get('/api/users/playlists', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -41,7 +46,8 @@ axios.get(`/api/playlists/${pid}`, {
         }
       })
   })
-  .catch(err => window.location = '/login')
+  .catch(err => console.log(err))
+  // .catch(err => window.location = '/login')
 
 document.getElementById('searchForSong').addEventListener('click', event => {
   const search = document.getElementById('songName').value

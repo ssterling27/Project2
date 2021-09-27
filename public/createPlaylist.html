@@ -12,46 +12,63 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
     integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/createPlaylist.css">
 </head>
 
 <body>
-
-<div class="bg-gradiant">
-  <div class="top-bar">
-    <div class="top-bar-left">
-      <ul class="menu">
-        <li class="menu-text">Moodify</li>
-        <li><a href="/">Home</a></li>
-        <li><a href="/profile">Profile</a></li>
-      </ul>
-    </div>
-    <div class="top-bar-right">
-      <ul class="menu">
-        <li><a href="/login" class="button warning" id="logOut">Log Out</a></li>
-      </ul>
-    </div>
+<div class="top-bar">
+  <!-- Left-side Nav bar -->
+  <div class="top-bar-left" style="font-family: 'Yaldevi', sans-serif; font-size: 1.25rem;">
+    <ul class="menu">
+      <li class="menu-text logo">Moodify</li>
+      <li><a class="link" href="/">Home</a></li>
+      <li><a class="link" href="/profile">Profile</a></li>
+      <li><a class="link" href="/create">Create</a></li>
+      <li><a href="/login" class="button warning" id="logOut">Log Out</a></li>
+    </ul>
   </div>
-
-  <div class="grid-container" style="margin-top: 30px;">
-    <div class="grid-x">
-      <div class="cell">
-        <div class="card">
-          <div class="card-divider">
-            <h1>Create a Playlist</h1>
-          </div>
-          <div class="card-section">
-            <form>
-              <label for="playlistName">Playlist Name</label>
-              <input type="text" id="playlistName">
-              <button type="button" class="success button" id="createPlaylist">Create</button>
-            </form>
+</div>
+</div>
+<section class="hero">
+  <div class="content">
+    <div class="enterSign has-text-centered">
+      <h1 class="loginTitle">Create a Playlist</h1>
+    </div>
+    <div class="hero-body">
+      <div class="hero-content heroArea">
+        <div class="boxArea">
+          <div class="grid-container" style="margin-top: 30px;">
+            <div class="grid-x">
+              <div class="cell">
+                <div class="card">
+                  <div class="card-section">
+                    <form>
+                      <label for="playlistName">Playlist Name</label>
+                      <input type="text" class="element-text" id="playlistName">
+                      <button type="button" class="button" id="createPlaylist">Create</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <footer class="footer bottom">
+        <div class="bd-footer-title">
+          <p class="header has-text-centered" style="font-size:1.25rem; color:azure;">
+            Moodify© 2021 Samantha Mack, Samuel Steinberg, Jasmine Benson, & Paul Pearce.
+          </p>
+        </div>
+      </footer>
     </div>
-  </div
+    <div>
+      <p>TEXT</p>
+    </div>
 
-</div>
+  </div>
+</section>
+
 
   <!-- <div class="button-group align-center expand">
    
@@ -63,9 +80,9 @@
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="/assets/js/createPlaylist.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+  <!-- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
     integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E</script> -->
   
 </body>
 </html>

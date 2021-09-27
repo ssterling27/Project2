@@ -1,8 +1,3 @@
-.content {
-  max-width: 1800px;
-  margin: auto;
-}
-
 
 .cardStyling:hover {
   border: 4px solid rgb(0, 206, 233);
@@ -40,21 +35,7 @@
   margin-bottom: 30px;
 }
 
-.heroArea {
-  background-color: rgb(255, 240, 253);
-  /* width: 90%; */
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
-  border: 3px solid rgb(0, 206, 233);
-}
 
-.enterSign {
-  position: relative;
-  z-index: 1;
-}
 
 .text {
   font-size: 4rem;

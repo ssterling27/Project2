@@ -11,9 +11,10 @@
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
     integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-   <link rel="stylesheet" href="assets/css/viewPlaylist.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <style>
+   <link rel="stylesheet" href="/../assets/css/viewPlaylist.css">
+  <link rel="stylesheet" href="/../assets/css/style.css">
+  <link rel="stylesheet" href="/../assets/css/addSongs.css">
+  <!-- <style>
     .playlistCenter {
       display: flex;
       justify-content: space-between;
@@ -32,102 +33,120 @@
       border-radius: 15px;
       border: 3px solid rgb(194, 219, 241);
     }
-  </style>
+  </style> -->
 </head>
 
 <body>
-
-  
-  <div class="bg-gradiant">
-
     <div class="top-bar">
-      <div class="top-bar-left">
+      <!-- Left-side Nav bar -->
+      <div class="top-bar-left" style="font-family: 'Yaldevi', sans-serif; font-size: 1.25rem;">
         <ul class="menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="/profile">Profile</a></li>
+          <li class="menu-text logo">Moodify</li>
+          <li><a class="link" href="/">Home</a></li>
+          <li><a class="link" href="/profile">Profile</a></li>
+          <li><a class="link" href="/create">Create</a></li>
+          <li><a href="/login" class="button warning" id="logOut">Log Out</a></li>
         </ul>
-        </div>
-        <div class="top-bar-right">
-          <ul class="menu">
-            <li><a href="/login" class="button warning" id="logOut">Log Out</a></li>
-          </ul>
-        </div>
       </div>
-
-  <div class="grid-container nameBox" style="margin-top: 30px;">
-    <div class="grid-x" id="playlistName">
     </div>
-  </div>
-
-    <div class="grid-container" style="margin-top: 30px;">
-      <div class="grid-x">
-        <div class="cell">
-          <div class="card">
-            <div class="card-divider">
-              <h1>Search for a Song</h1>
+    </div>
+    <section class="hero">
+      <div class="content" id="playlistName">
+        <div class="hero-body">
+          <div class="hero-content heroArea">
+            <div class="boxArea">
+            <div class="grid-container" style="margin-top: 30px;">
+              <div class="grid-x">
+                <div class="cell">
+                  <div class="card">
+                    <div class="card-divider">
+                      <h1>Search for a Song</h1>
+                    </div>
+                    <div class="card-section">
+                      <form>
+                        <label for="songName">Song Name</label>
+                        <input type="text" id="songName">
+                        <button type="button" class="success button" id="searchForSong">Search</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="card-section">
-              <form>
-                <label for="songName">Song Name</label>
-                <input type="text" id="songName">
-                <button type="button" class="success button" id="searchForSong">Search</button>
-              </form>
+            
+            
+            <div class="grid-container" style="margin-top: 30px;">
+              <div class="grid-x">
+                <div class="cell">
+                  <div class="card">
+                    <div class="card-divider" id="playlistHere"></div>
+                    <div class="card-section">
+                      <table>
+                        <thead></thead>
+                        <tbody id="songsHere"></tbody>
+                      </table>
+                    </div>
+            
+                  </div>
+            
+            
+                  <h3 class="center">OR</h3>
+                  <div class="grid-container" style="margin-top: 30px;">
+                    <div class="grid-x">
+                      <div class="cell">
+                        <div class="card">
+                          <div class="card-divider">
+                            <h1>Input Song Manually</h1>
+                          </div>
+                          <div class="card-section">
+                            <table>
+                              <thead></thead>
+                              <tbody>
+                                <td><input type="text" id="artInput" placeholder="Artwork Link"></td>
+                                <td><input type="text" id="trackTitleInput" placeholder="Track Title"></td>
+                                <td><input type="text" id="artistNameInput" placeholder="Artist Name"></td>
+                                <td><input type="text" id="albumNameInput" placeholder="Album Name"></td>
+                                <td><input type="text" id="streamLinkInput" placeholder="Stream Link"></td>
+                                <td><input type="text" id="moodInput" placeholder="Mood"></td>
+                              </tbody>
+                            </table>
+                            <button type="button" class="success button addSong">Add Song</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
             </div>
           </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          <footer class="footer bottom">
+            <div class="bd-footer-title">
+              <p class="header has-text-centered" style="font-size:1.25rem; color:azure;">
+                Moodify© 2021 Samantha Mack, Samuel Steinberg, Jasmine Benson, & Paul Pearce.
+              </p>
+            </div>
+          </footer>
         </div>
+        <div>
+          <p>TEXT</p>
+        </div>
+    
       </div>
-    </div>
+    </section>
+  
 
     
-    <div class="grid-container" style="margin-top: 30px;">
-      <div class="grid-x">
-        <div class="cell">
-          <div class="card">
-            <div class="card-divider" id="playlistHere"></div>
-            <div class="card-section">
-              <table>
-                <thead></thead>
-                <tbody id="songsHere"></tbody>
-              </table>
-            </div>
-
-  </div>
-
-     
-    <h3 class="center">OR</h3>
-    <div class="grid-container" style="margin-top: 30px;">
-      <div class="grid-x">
-        <div class="cell">
-          <div class="card">
-            <div class="card-divider">
-              <h1>Input Song Manually</h1>
-            </div>
-            <div class="card-section">
-              <table>
-                <thead></thead>
-                <tbody>
-                  <td><input type="text" id="artInput" placeholder="Artwork Link"></td>
-                  <td><input type="text" id="trackTitleInput" placeholder="Track Title"></td>
-                  <td><input type="text" id="artistNameInput" placeholder="Artist Name"></td>
-                  <td><input type="text" id="albumNameInput" placeholder="Album Name"></td>
-                  <td><input type="text" id="streamLinkInput" placeholder="Stream Link"></td>
-                  <td><input type="text" id="moodInput" placeholder="Mood"></td>
-                </tbody>
-              </table>
-              <button type="button" class="success button addSong">Add Song</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
+  
   
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="../../assets/js/addSongs.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+  <!-- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
     integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E</script> -->
   
 </body>
 </html>
