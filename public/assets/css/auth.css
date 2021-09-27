@@ -203,3 +203,8 @@
    font-weight: 200;
    margin-top: 1rem;
  }
+
+
+ .input-group-field:focus {
+   border: 2px solid rgba(255, 82, 134, 0.8);
+ }

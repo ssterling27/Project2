@@ -7,54 +7,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moodify</title>
   <!-- CSS only -->
+  <link rel="stylesheet" href="/assets/css/reset.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/foundation.css">
-  <link rel="stylesheet" href="assets/css/viewPlaylist.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/viewPlaylist.css">
 </head>
 
 <body>
   <div class="top-bar">
-    <div class="top-bar-left">
+    <!-- Left-side Nav bar -->
+    <div class="top-bar-left" style="font-family: 'Yaldevi', sans-serif; font-size: 1.25rem;">
       <ul class="menu">
-        <li class="menu-text">Moodify</li>
-        <li><a href="/">Home</a></li>
-        <li><a href="/profile">Profile</a></li>
-      </ul>
-    </div>
-    <div class="top-bar-right">
-      <ul class="menu">
+        <li class="menu-text logo">Moodify</li>
+        <li><a class="link" href="/">Home</a></li>
+        <li><a class="link" href="/profile">Profile</a></li>
+        <li><a class="link" href="/create">Create</a></li>
         <li><a href="/login" class="button warning" id="logOut">Log Out</a></li>
       </ul>
     </div>
   </div>
-  <!-- <div class="button-group align-center expand">
-   
-    <a class="success button">Save</a>
-    <a class="alert button">Delete</a>
-    <button class="dropdown button">Sort by Mood</button>
-    </a>
-  </div> -->
-  <div class="grid-container" style="margin-top: 30px;">
-    <div class="grid-x">
-      <div class="cell">
-        <div class="card">
-          <div class="card-divider">
-            <table id="playlistHere">
-            </table>
-          </div>
-          <div class="card-section">
-            <table>
-              <thead></thead>
-              <tbody id="songsHere"></tbody>
-            </table>
+  <section class="hero">
+    <div class="content" id="playlistName">
+      
+      <div class="hero-body">
+        <div class="hero-content heroArea">
+          <div class="boxArea">
+            <div class="grid-container" style="margin-top: 30px;">
+              <div class="grid-x">
+                <div class="cell">
+                  <div class="card" id="songsHere">
+                    <div class="card-divider">
+                      <table id="playlistHere">
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+  
           </div>
         </div>
       </div>
+      
     </div>
-  </div>
+    </div>
+    </div>
+    <footer class="footer bottom">
+      <div class="bd-footer-title">
+        <p class="header has-text-centered" style="font-size:1.25rem; color:azure;">
+          Moodify© 2021 Samantha Mack, Samuel Steinberg, Jasmine Benson, & Paul Pearce.
+        </p>
+      </div>
+    </footer>
+    </div>
+    <div>
+      <p>TEXT</p>
+    </div>
+  </section>
+  
 
   
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

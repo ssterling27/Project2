@@ -35,12 +35,14 @@ axios.get(`../api/users/playlists`, {
       document.getElementById('playlistsHere').append(playlistElem)
     })
   })})
+  .catch(err => console.log(err))
     axios.get(`../api/allsong/${uid}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     })
     .then(({ data: song }) => {
+      console.log(song)
       const allSongsElem = document.createElement('div')
       allSongsElem.classList = 'cell small-3'
       allSongsElem.id = 'allSongs'
@@ -54,6 +56,7 @@ axios.get(`../api/users/playlists`, {
       `
       document.getElementById('playlistsHere').prepend(allSongsElem)
     })
+    .catch(err => console.log(err))
   })
 
   .catch(err => window.location = '/login')
