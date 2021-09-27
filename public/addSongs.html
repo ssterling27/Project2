@@ -58,15 +58,15 @@
             <div class="grid-container" style="margin-top: 30px;">
               <div class="grid-x">
                 <div class="cell">
-                  <div class="card">
+                  <div class="card" id="resultsHere">
                     <div class="card-divider">
                       <h1 style="font-family: 'Yaldevi', sans-serif;">Search for a Song</h1>
                     </div>
                     <div class="card-section">
                       <form>
                         <label for="songName">Song Name</label>
-                        <input type="text" id="songName">
-                        <button type="button" class="success button" id="searchForSong">Search</button>
+                        <input type="text" id="songName" class="element-text">
+                        <button type="button" class="button adder" id="searchForSong">Search</button>
                       </form>
                     </div>
                   </div>
@@ -75,7 +75,7 @@
             </div>
             
             
-            <div class="grid-container" style="margin-top: 30px;">
+            <!-- <div class="grid-container" style="margin-top: 30px;">
               <div class="grid-x">
                 <div class="cell">
                   <div class="card">
@@ -87,31 +87,41 @@
                       </table>
                     </div>
             
-                  </div>
+                  </div> -->
             
                   <div class="enterSign has-text-centered">
-                    <h3 class="loginTitle">OR</h3>
+                    <h5 class="loginTitle" style="font-size: 5rem;">OR</h5>
                   </div>
                   <div class="grid-container" style="margin-top: 30px;">
                     <div class="grid-x">
                       <div class="cell">
                         <div class="card">
                           <div class="card-divider">
-                            <h1>Input Song Manually</h1>
+                            <h1 style="font-family: 'Yaldevi', sans-serif;">Input Song Manually</h1>
                           </div>
                           <div class="card-section">
-                            <table>
+                            <div class="grid-container fluid">
+                              <div class="grid-x grid-margin-x">
+                                <div class="cell small-2"><input class="element-text2" type="text" id="artInput" placeholder="Artwork Link"></div>
+                                <div class="cell small-2"><input class="element-text2" type="text" id="trackTitleInput" placeholder="Track Title"></div>
+                                <div class="cell small-2"><input class="element-text2" type="text" id="artistNameInput" placeholder="Artist Name"></div>
+                                <div class="cell small-2"><input class="element-text2" type="text" id="albumNameInput" placeholder="Album Name"></div>
+                                <div class="cell small-2"><input class="element-text2" type="text" id="streamLinkInput" placeholder="Stream Link"></div>
+                                <div class="cell small-2"><input class="element-text2" type="text" id="moodInput" placeholder="Mood"></div>
+                              </div>
+                            </div>
+                            <!-- <table>
                               <thead></thead>
                               <tbody>
-                                <td><input type="text" id="artInput" placeholder="Artwork Link"></td>
-                                <td><input type="text" id="trackTitleInput" placeholder="Track Title"></td>
-                                <td><input type="text" id="artistNameInput" placeholder="Artist Name"></td>
-                                <td><input type="text" id="albumNameInput" placeholder="Album Name"></td>
-                                <td><input type="text" id="streamLinkInput" placeholder="Stream Link"></td>
-                                <td><input type="text" id="moodInput" placeholder="Mood"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                               </tbody>
-                            </table>
-                            <button type="button" class="success button addSong">Add Song</button>
+                            </table> -->
+                            <button type="button" class="button addSong adder">Add Song</button>
                           </div>
                         </div>
                       </div>

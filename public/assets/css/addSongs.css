@@ -5,6 +5,45 @@
    margin: auto;
  }
 
+ .font {
+   font-family: 'Yaldevi', sans-serif;
+   padding-bottom: 15px;
+   padding-top: 15px;
+ }
+
+ .font:nth-child(odd) {
+   background-color: rgb(123, 240, 255);
+   /* border-top: 3px solid rgb(255, 120, 237); */
+   border-top: 3px solid rgb(56, 192, 255);
+ }
+
+ .font:nth-child(even) {
+   background-color: rgb(255, 189, 246);
+   border-top: 3px solid rgb(56, 192, 255)
+ }
+
+ .card-divider {
+   background-color: rgb(172, 229, 255);
+ }
+
+ .card-section {
+   background-color: rgb(253, 223, 249);
+ }
+
+ tbody {
+   display: flex;
+   flex-wrap: wrap;
+ }
+
+ .adder {
+   background-color: rgb(0, 206, 233);
+   color: white;
+ }
+
+ .adder:hover {
+   background-color: rgb(255, 82, 134);
+ }
+
  label {
    font-family: 'Yaldevi', sans-serif;
    font-size: 2rem;
@@ -23,8 +62,40 @@
    border-radius: 5px;
  }
 
+ .element-text2 {
+   font-size: 1rem;
+   border-radius: 5px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   -ms-border-radius: 5px;
+   -o-border-radius: 5px;
+ }
+
+ @media screen and (max-width: 900px) {
+   .grid-margin-x>.small-2 {
+     width: calc(33.33333% - 2rem)
+   }
+
+ }
+
+ @media screen and (max-width: 622px) {
+   .grid-margin-x>.small-2 {
+     width: calc(33.33333% - 1.25rem)
+   }
+ }
+
+ /* @media screen and (max-width: 600px) {
+   .grid-margin-x>.small-2 {
+     width: 10%
+   }
+ } */
+
+ .element-text2:focus {
+   border: 3px solid rgb(92, 203, 255);
+ }
+
  .element-text:focus {
-   border: 2px solid rgba(255, 82, 134, 0.8);
+   border: 3px solid rgb(92, 203, 255);
  }
 
  /* span input[type="text"]:focus {
@@ -40,17 +111,14 @@
    -moz-border-radius: 10px;
    -ms-border-radius: 10px;
    -o-border-radius: 10px;
+   background-color: rgba(0, 206, 233, 0.2);
+   border: 2px solid rgba(255, 82, 134, 0.9);
  }
 
  .loginTitle {
    font-family: 'Nunito', sans-serif;
    color: aliceblue;
    font-size: 7rem;
- }
-
- .content {
-   max-width: 1100px;
-   margin: auto;
  }
 
  .heroArea {
@@ -128,8 +196,8 @@
    color: black;
    text-align: center;
    margin-right: 5rem;
-   margin-left: 9rem;
-   margin-bottom: 2rem;
+   margin-left: 14rem;
+   margin-bottom: 0;
    margin-top: 2rem;
  }
 
@@ -237,4 +305,29 @@
    font-size: 2rem;
    font-weight: 200;
    margin-top: 1rem;
+ }
+
+ @media screen and (max-width: 900px) {
+   .heroArea {
+     margin-left: -2rem;
+     margin-right: -2rem;
+   }
+   .trackImage {
+     max-width: 60px;
+   }
+   .font {
+     justify-content: space-around;
+   }
+   .trackMood {
+     margin-top: 20px;
+   }
+   /* .trackName {
+     font-size: .75rem;
+   }
+   .trackArtist {
+     font-size: .75rem;
+   }
+   .trackAlbum {
+     font-size: .75rem;
+   } */
  }
