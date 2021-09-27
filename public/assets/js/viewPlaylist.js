@@ -75,7 +75,7 @@ axios.get(`/api/playlists/${pid}`, {
             <div class="cell small-2 trackAlbum">${song.album}</div>
             <div class="cell small-1 trackLink"><a href="${song.link}">Link</a></div>
             <div class="cell small-2 trackMood">${song.mood}</div>
-            ${public || thisUser ? `<div class="cell small-2 trackAdd"><button type="button" class="button deleteSong">Delete</button></div>` : ''}
+            ${public || thisUser ? `<div class="cell small-2 trackAdd"><button type="button" id="${song.id}" class="button deleteSong">Delete</button></div>` : ''}
           `
               document.getElementById('songsHere').append(songElem)
               moods.push(song.mood)
@@ -128,7 +128,7 @@ document.addEventListener('click', event => {
             <div class="cell small-2 trackAlbum">${song.album}</div>
             <div class="cell small-1 trackLink"><a href="${song.link}">Link</a></div>
             <div class="cell small-2 trackMood">${song.mood}</div>
-            ${public || thisUser ? `<div class="cell small-2 trackAdd"><button type="button" class="button deleteSong">Delete</button></div>` : ''}
+            ${public || thisUser ? `<div class="cell small-2 trackAdd"><button type="button" id ="${song.id}" class="button deleteSong">Delete</button></div>` : ''}
           `
           document.getElementById('songsHere').append(songElem)
         })
