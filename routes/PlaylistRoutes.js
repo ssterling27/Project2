@@ -43,7 +43,7 @@ router.put('/playlists/:pid', (req, res) =>
   .catch(err => console.log(err))
 )
 
-router.delete('/playlists/:pid', (req, res) => Playlist.destroy({ where: {id: req.params.id } })
+router.delete('/playlists/:pid', (req, res) => Playlist.destroy({ where: {id: req.params.pid } })
   .then(() => res.sendStatus(200))
   .catch(err => console.log(err)))
 

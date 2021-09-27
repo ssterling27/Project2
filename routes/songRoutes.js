@@ -32,9 +32,11 @@ router.get('/playlists/:pid/song', (req, res) => {
 
 router.get('/allsong/:uid', passport.authenticate('jwt'), (req, res) => {
   Playlist.findOne({ where: { uid: req.params.uid }, include: ['u'] })
+  // .then(playlist => res.json(playlist))
     .then(playlist => {
-      Song.findOne({ where: { pid: playlist.id } })
+      Song.findOne({ where: { pid: playlist.id } } )
         .then(song => res.json(song))
+        .catch(err => console.log(err))
         })
     .catch(err => console.log(err))
     })

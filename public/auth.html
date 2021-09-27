@@ -5,69 +5,77 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moodify Login</title>
+  <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
     integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/auth.css">
 </head>
 <!-- Top Bar   -->
-<div class="top-bar">
-  <div class="top-bar-left">
-    <ul class="menu">
-      <li class="menu-text">Moodify</li>
-      <li><a href="/">Home</a></li>
-      <li><a href="/profile">Profile</a></li>
-    </ul>
-  </div>
-  <div class="top-bar-right">
-    <ul class="menu">
-      
-    </ul>
-  </div>
-</div>
 <body>
-  <div class="bg-gradiant">  
-  
- <!-- login form     -->
-<div class="hero-body">
+    
+  <div class="top-bar">
+    <!-- Left-side Nav bar -->
+    <div class="top-bar-left" style="font-family: 'Yaldevi', sans-serif; font-size: 1.25rem;">
+      <ul class="menu">
+        <li class="menu-text logo">Moodify</li>
+        <li><a class="link" href="/">Home</a></li>
+        <li><a class="link" href="/profile">Profile</a></li>
+        <li><a class="link" href="/create">Create</a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
   <section class="hero">
-
-    <div class="hero-content">
-      <div class="boxArea">
-        <h3 class="hero-title" style="margin-bottom: 20px;">
-          Login
-        </h3>
-
-        <form>
-          <div class="form-icons">
-          
-            <div class="input-group">
-              <span class="input-group-label">
-                <i class="fa fa-user"></i>
-              </span>
-              <input class="input-group-field" type="text" placeholder="Username" id="username">
-            </div>
-          
-            <div class="input-group">
-              <span class="input-group-label">
-                <i class="fa fa-key"></i>
-              </span>
-              <input class="input-group-field" type="password" placeholder="Password" id="password">
-            </div>
-          </div>
-          
-          <button class="button expanded" id="login">Login</button>
-          <button class="button expanded" id="register">Register</button>
-        </form>
-
-
+    <div class="content">
+      <div class="enterSign has-text-centered">
+        <h1 class="loginTitle">Login</h1>
       </div>
-
+      <div class="hero-body">
+        <div class="hero-content heroArea">
+          <div class="boxArea">
+            <form>
+              <div class="form-icons">
+            
+                <div class="input-group">
+                  <span class="input-group-label">
+                    <i class="fa fa-user"></i>
+                  </span>
+                  <input class="input-group-field" type="text" placeholder="Username" id="username">
+                </div>
+            
+                <div class="input-group">
+                  <span class="input-group-label">
+                    <i class="fa fa-key"></i>
+                  </span>
+                  <input class="input-group-field" type="password" placeholder="Password" id="password">
+                </div>
+              </div>
+            
+              <button class="button expanded" id="login" style="margin-bottom:20px; margin-top:10px;">Login</button>
+              <button class="button expanded" id="register">Register</button>
+            </form>
+            
+          </div>
+        </div>
+        <footer class="footer bottom">
+          <div class="bd-footer-title">
+            <p class="header has-text-centered" style="font-size:1.25rem; color:azure;">
+              Moodify© 2021 Samantha Mack, Samuel Steinberg, Jasmine Benson, & Paul Pearce.
+            </p>
+          </div>
+        </footer>
+      </div>
+      <div>
+        <p>TEXT</p>
+      </div>
+  
+    </div>
   </section>
+ <!-- login form     -->
 
-</div>
 
 
 <!-- <div id="invalid" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
@@ -78,13 +86,11 @@
     <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
   </div>
 </div> -->
-
-  </div>
   
-  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="./assets/js/auth.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E</script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E</script> -->
 </body>
 </html>

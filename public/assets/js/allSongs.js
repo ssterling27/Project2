@@ -10,8 +10,8 @@ let playlistUser = ''
 let playlist = ''
 // function to remove all songs to repopulate for mood
 function removeAllChildNodes(parent) {
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
+  while (parent.childNodes.length > 2) {
+    parent.childNodes[2].remove()
   }
 }
 
@@ -27,10 +27,9 @@ function removeAllChildNodes(parent) {
       }
       const allSongsElem = document.createElement('tr')
         allSongsElem.innerHTML = `
-    <td><h5>All my Songs</h5></td>
     <td><div style="font-size:1rem;" class="badge bg-primary rounded-pill">${username}</div></td>
     <td><div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Sort by Mood</button>
+    <button class="button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Sort by Mood</button>
     <ul class="dropdown-menu" id="moodsHere" aria-labelledby="drowndownMenuButton1">
     <li><a class="dropdown-item moodSelector" href="">All</a></li>
     </ul>
@@ -44,17 +43,19 @@ function removeAllChildNodes(parent) {
       })
       .then(({ data: songs }) => {
       songs.forEach(song => {
-        const songElem = document.createElement('tr')
+        const songElem = document.createElement('div')
+        songElem.classList = 'grid-x grid-margin-x font'
+        songElem.style = 'align-items: center;'
         songElem.innerHTML = `
-      <td><img src="${song.artwork}" style="width: 100px;"></td>
-      <td>${song.title}</td>
-      <td>${song.artist}</td>
-      <td>${song.album}</td>
-      <td><a href="${song.link}">Link</a></td>
-      <td>${song.mood}</td>
-      `
-      document.getElementById('songsHere').append(songElem)
-      moods.push(song.mood)
+            <div class="cell small-1 trackImage"><img src="${song.artwork}"></div>
+            <div class="cell small-3 trackName" style="margin-left:-3px;">${song.title}</div>
+            <div class="cell small-2 trackArtist" style="margin-right:10px;">${song.artist}</div>
+            <div class="cell small-2 trackAlbum">${song.album}</div>
+            <div class="cell small-2 trackLink"><a href="${song.link}">Link</a></div>
+            <div class="cell small-2 trackMood">${song.mood}</div>
+          `
+        document.getElementById('songsHere').append(songElem)
+        moods.push(song.mood)
       })
         moods.forEach(mood => {
           if (!uniqueMoods.includes(mood)) {
@@ -91,17 +92,18 @@ function removeAllChildNodes(parent) {
         }
       })
         .then(({ data: songs }) => {
-          console.log(songs)
           songs.forEach(song => {
-            const songElem = document.createElement('tr')
+            const songElem = document.createElement('div')
+            songElem.classList = 'grid-x grid-margin-x font'
+            songElem.style = 'align-items: center;'
             songElem.innerHTML = `
-      <td><img src ="${song.artwork}" style="width: 100px;"></td>
-      <td>${song.title}</td>
-      <td>${song.artist}</td>
-      <td>${song.album}</td>
-      <td><a href="${song.link}">Link</a></td>
-      <td>${song.mood}</td>
-      `
+            <div class="cell small-1 trackImage"><img src="${song.artwork}"></div>
+            <div class="cell small-3 trackName" style="margin-left:-3px;">${song.title}</div>
+            <div class="cell small-2 trackArtist" style="margin-right:10px;">${song.artist}</div>
+            <div class="cell small-2 trackAlbum">${song.album}</div>
+            <div class="cell small-2 trackLink"><a href="${song.link}">Link</a></div>
+            <div class="cell small-2 trackMood">${song.mood}</div>
+          `
         document.getElementById('songsHere').append(songElem)
           })
         })

@@ -11,8 +11,8 @@ let playlistUser = ''
 let playlist = ''
 // function to remove all songs to repopulate for mood
 function removeAllChildNodes(parent) {
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
+  while (parent.childNodes.length > 2) {
+    parent.childNodes[2].remove()
   }
 }
 axios.get(`/api/playlists/${pid}`, {
@@ -21,7 +21,12 @@ axios.get(`/api/playlists/${pid}`, {
   }
 })
   .then(({ data: playlist }) => {
-    console.log(playlist)
+    const playlistNameElem = document.createElement('div')
+    playlistNameElem.classList = 'enterSign has-text-centered'
+    playlistNameElem.innerHTML = `
+    <h1 class="loginTitle">${playlist.name}</h1><br>
+    `
+    document.getElementById('playlistName').prepend(playlistNameElem)
     playlistUser = playlist.uid
     public = playlist.public
     axios.get('/api/users/playlists', {
@@ -37,19 +42,19 @@ axios.get(`/api/playlists/${pid}`, {
         console.log(thisUser)
         const playlistElem = document.createElement('tr')
         playlistElem.innerHTML = `
-    <td><h5>${playlist.name}</h5></td>
     <td><div style="font-size:1rem;" class="badge bg-primary rounded-pill">${playlist.u.username}</div></td>
     <td><div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Sort by Mood</button>
+    <button class="button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Sort by Mood</button>
     <ul class="dropdown-menu" id="moodsHere" aria-labelledby="drowndownMenuButton1">
     <li><a class="dropdown-item moodSelector" href="">All</a></li>
     </ul>
     </div></td>
-    ${public || thisUser ? '<td><button type="button" class="success button addSongs">Add Songs</button></td>' : ''}
-    ${thisUser && public ? '<td><button type="button" class="button publicButton">Hide</button></td>' : '' }
-    ${thisUser && !public ? '<td><button type="button" class="button publicButton">Go Public</button></td>' : '' }
-    ${!thisUser && public ? '<td><h5 style="color:blue;">Public</h5></td>' : '' }
-    ${!thisUser && !public ? '<td><h5 style="color:red;">Not Public</h5></td>' : '' }
+    ${public || thisUser ? '<td><button type="button" class="button addSongs">Add Songs</button></td>' : ''}
+    ${thisUser && public ? '<td><button type="button" class="button publicButton">Hide</button></td>' : ''}
+    ${thisUser && !public ? '<td><button type="button" class="button publicButton">Go Public</button></td>' : ''}
+    ${!thisUser && public ? '<td><h5 style="color:blue;">Public</h5></td>' : ''}
+    ${!thisUser && !public ? '<td><h5 style="color:red;">Not Public</h5></td>' : ''}
+    ${thisUser ? '<td><button type="button" class="button playlistDelete">Delete Playlist</button></td>' : ''}
     `
         document.getElementById('playlistHere').append(playlistElem)
         axios.get(`/api/playlists/${pid}/songs`, {
@@ -60,16 +65,18 @@ axios.get(`/api/playlists/${pid}`, {
           .then(({ data: songs }) => {
             console.log(songs)
             songs.forEach(song => {
-              const songElem = document.createElement('tr')
+              const songElem = document.createElement('div')
+              songElem.classList = 'grid-x grid-margin-x font'
+              songElem.style = 'align-items: center;'
               songElem.innerHTML = `
-      <td><img src="${song.artwork}" style="width: 100px;"></td>
-      <td>${song.title}</td>
-      <td>${song.artist}</td>
-      <td>${song.album}</td>
-      <td><a href="${song.link}">Link</a></td>
-      <td>${song.mood}</td>
-      ${public || thisUser ? `<td><button type="button" id="${song.id}" class="alert button deleteSong">Delete</button></td>` : ''}
-      `
+            <div class="cell small-1 trackImage"><img src="${song.artwork}"></div>
+            <div class="cell small-2 trackName" style="margin-left:-3px;">${song.title}</div>
+            <div class="cell small-2 trackArtist" style="margin-right:10px;">${song.artist}</div>
+            <div class="cell small-2 trackAlbum">${song.album}</div>
+            <div class="cell small-1 trackLink"><a href="${song.link}">Link</a></div>
+            <div class="cell small-2 trackMood">${song.mood}</div>
+            ${public || thisUser ? `<div class="cell small-2 trackAdd"><button type="button" class="button deleteSong">Delete</button></div>` : ''}
+          `
               document.getElementById('songsHere').append(songElem)
               moods.push(song.mood)
 
@@ -111,16 +118,18 @@ document.addEventListener('click', event => {
     })
       .then(({ data: songs }) => {
         songs.forEach(song => {
-          const songElem = document.createElement('tr')
+          const songElem = document.createElement('div')
+          songElem.classList = 'grid-x grid-margin-x font'
+          songElem.style = 'align-items: center;'
           songElem.innerHTML = `
-      <td><img src="${song.artwork} style="width: 100px;"></td>
-      <td>${song.title}</td>
-      <td>${song.artist}</td>
-      <td>${song.album}</td>
-      <td><a href="${song.link}">Link</a></td>
-      <td>${song.mood}</td>
-      ${public || thisUser ? `<td><button type="button" id="${song.id}" class="alert button deleteSong">Delete</button></td>` : ''}
-      `
+            <div class="cell small-1 trackImage"><img src="${song.artwork}"></div>
+            <div class="cell small-2 trackName" style="margin-left:-3px;">${song.title}</div>
+            <div class="cell small-2 trackArtist" style="margin-right:10px;">${song.artist}</div>
+            <div class="cell small-2 trackAlbum">${song.album}</div>
+            <div class="cell small-1 trackLink"><a href="${song.link}">Link</a></div>
+            <div class="cell small-2 trackMood">${song.mood}</div>
+            ${public || thisUser ? `<div class="cell small-2 trackAdd"><button type="button" class="button deleteSong">Delete</button></div>` : ''}
+          `
           document.getElementById('songsHere').append(songElem)
         })
       })
@@ -130,29 +139,41 @@ document.addEventListener('click', event => {
 document.addEventListener('click', event => {
   if (event.target.classList.contains('publicButton')) {
     public = !public
-    axios.put(`/api/playlists/${pid}`, 
+    axios.put(`/api/playlists/${pid}`,
       {
-      public: public
-    })
-    .then(() => {
-      if (event.target.textContent === 'Go Public') {
-        event.target.textContent = 'Hide'
-      } else {
-        event.target.textContent = 'Go Public'
-      }
-    })
-    .catch(err => console.error(err))
+        public: public
+      })
+      .then(() => {
+        if (event.target.textContent === 'Go Public') {
+          event.target.textContent = 'Hide'
+          
+          // event.target.style = 'background-color: rgb(255, 82, 134); color:black;'
+          // event.target.style.hover = 'background-color: rgb(0, 206, 233);'
+        } else {
+          event.target.textContent = 'Go Public'
+          // event.target.style = 'background-color: rgb(255, 82, 134); color: black;'
+          
+        }
+      })
+      .catch(err => console.error(err))
   }
   else if (event.target.classList.contains('deleteSong')) {
     sid = event.target.id
     axios.delete(`/api/playlists/${pid}/songs/${sid}`)
-    .then(() => {
-      event.target.parentNode.parentNode.remove()
-    })
-    .catch(err => console.log(err))
+      .then(() => {
+        event.target.parentNode.parentNode.remove()
+      })
+      .catch(err => console.log(err))
   }
   else if (event.target.classList.contains('addSongs')) {
     window.location = `/playlists/add/${pid}`
+  }
+  else if (event.target.classList.contains('playlistDelete')) {
+    axios.delete(`/api/playlists/${pid}`)
+      .then(() => {
+        window.location = '/'
+      })
+      .catch(err => console.log(err))
   }
 })
 

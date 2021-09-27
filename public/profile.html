@@ -5,15 +5,71 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
     integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
 
 </head>
  
 <body>
-  <div class="bg-gradiant">
+  <div class="top-bar">
+    <!-- Left-side Nav bar -->
+    <div class="top-bar-left" style="font-family: 'Yaldevi', sans-serif; font-size: 1.25rem;">
+      <ul class="menu">
+        <li class="menu-text logo">Moodify</li>
+        <li><a class="link" href="/">Home</a></li>
+        <li><a class="link" href="/profile">Profile</a></li>
+        <li><a class="link" href="/create">Create</a></li>
+        <li><a href="/login" class="button warning" id="logOut">Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+  
+  
+  
+  <section class="hero">
+    <div class="content">
+      <div class="enterSign">
+        <svg viewBox="0 0 500 100">
+          <!-- Symbol-->
+          <symbol id="s-text">
+            <!-- <text text-anchor="middle" x="50%" y="30%" dy=".35em" id="textHere"></text> -->
+          </symbol>
+          <!-- Duplicate symbols-->
+          <use class="text" xlink:href="#s-text"></use>
+          <use class="text" xlink:href="#s-text"></use>
+          <use class="text" xlink:href="#s-text"></use>
+          <use class="text" xlink:href="#s-text"></use>
+          <use class="text" xlink:href="#s-text"></use>
+        </svg>
+      </div>
+      <div class="hero-body">
+        <div class="hero-content heroArea">
+          <div class="boxArea">
+  
+            <a href="/create" class="button large">Create a New Playlist</a>
+  
+            <div id="playlistsHere" class="grid-x" style="margin-top: 20px;"></div>
+          </div>
+        </div>
+        <footer class="footer bottom hero-content">
+          <div class="bd-footer-title has-text-centered">
+            <p class="header" style="font-size:1.25rem; color:azure;">
+              Moodify© 2021 Samantha Mack, Samuel Steinberg, Jasmine Benson, & Paul Pearce.
+            </p>
+          </div>
+        </footer>
+      </div>
+      <div>
+        <p>TEXT</p>
+      </div>
+  
+    </div>
+  </section>
+  <!-- <div class="bg-gradiant">
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
@@ -27,33 +83,12 @@
           <li><a href="/login" class="button warning" id="logOut">Log Out</a></li>
         </ul>
       </div>
-    </div>
+    </div> -->
   
-  <div class="hero-body">
-    <section class="hero">
   
-      <div class="hero-content">
-        <div class="boxArea">
-          <h1 class="hero-title" style="margin-bottom: 20px;">
-            Your Profile
-          </h1>
-  
-          <div id="playlistsHere" class="grid-x"></div>
-        </div>
-  </div>
-  </section>
-  </div>
-</div>
-  <footer class="footer bottom">
-    <div class="bd-footer-title has-text-centered">
-      <p>
-        <strong>Moodify</strong> © 2021 Samantha Mack, Samuel Steinberg, Jasmine Benson, Paul Pearce & Kenny Benavides.
-      </p>
-    </div>
-  </footer>
   <!-- JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="/assets/js/profile.js"></script>
 </body>
